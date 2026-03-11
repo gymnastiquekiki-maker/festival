@@ -169,6 +169,19 @@ Stránka je rozdělena do dvou hlavních bloků. První blok obsahuje seznam vš
 Druhý blok obsahuje detailní profily vybraných kapel, každá jako samostatný `<article>`, s nadpisem `<h3>`, krátkým popisem a obrázkem.
 Díky tomu stránka kombinuje rychlý přehled i detailní informace.
 
+Poté jsme vytvořili `styles.css`, abychom sjednotili vzhled všech HTML stránek a oddělili prezentaci od obsahu.
+
+CSS nastavuje:
+- barevnou paletu a kontrast (tmavé pozadí + akcenty),
+- typografii (základní písmo + výrazný display font),
+- základní layout (šířka obsahu, mezery, rozdělení do sekcí),
+- vzhled navigace, tlačítek a karet,
+- práci s obrázky (responsivní chování, zaoblení),
+- responsivní úpravy pro menší obrazovky.
+
+Díky tomu mají všechny stránky jednotný vizuální styl a konzistentní strukturu.
+
+
 
 1. Zkontrolovali jsme sémantické HTML a metadata.
 2. Opravili jsme `og:image` na Lorem Picsum v HTML souborech.
@@ -178,5 +191,6 @@ Díky tomu stránka kombinuje rychlý přehled i detailní informace.
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
+
 
 
