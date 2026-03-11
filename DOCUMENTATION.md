@@ -273,3 +273,30 @@ Důkaz (praktické informace – místo, doprava/parkování, ubytování):
 <h2>Ubytování</h2>
 ```
 
+### Ověření: sémantické HTML
+- smysluplná struktura: `header`, `nav`, `main`, `section`, `article`, `footer`.
+- korektní hierarchie nadpisů: `h1` → `h2` → `h3`.
+- vhodné elementy pro seznamy a data: např. `time` v programu.
+
+Důkaz (struktura):
+```
+<header>
+<nav>
+<main>
+<section>
+<article>
+<footer>
+```
+
+Důkaz (nadpisy):
+```
+<h1>Program</h1>
+<h2>Harmonogram tří dnů</h2>
+<h3>Steel Stage</h3>
+```
+
+Důkaz (time v programu):
+```
+<li><time datetime="2026-08-14T18:00">18:00</time> Metallica</li>
+```
+
