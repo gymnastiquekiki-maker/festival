@@ -1,5 +1,11 @@
 ﻿(function () {
-  var runBtn = document.getElementById("run");\n  var output = document.getElementById("output");\n  var downloadToggle = document.getElementById("download");
+  var runBtn = document.getElementById("run");
+  var output = document.getElementById("output");
+  var downloadToggle = document.getElementById("download");
+
+  if (!runBtn || !output) {
+    return;
+  }
 
   var transforms = [
     { name: "info.json", xslt: "xslt/festival-info.xslt", match: "/festival/info" },
@@ -67,11 +73,14 @@
 
         output.textContent = results.map(function (r) { return "// " + r.name + "\n" + r.json; }).join("\n\n");
 
-        if (downloadToggle && downloadToggle.checked) {\n          results.forEach(function (r) {\n            download(r.name, r.json + "\\n");\n          });\n        }
+        if (downloadToggle && downloadToggle.checked) {
+          results.forEach(function (r) {
+            download(r.name, r.json + "\n");
+          });
+        }
       })
       .catch(function (err) {
         output.textContent = "Chyba: " + err.message;
       });
   });
 })();
-
