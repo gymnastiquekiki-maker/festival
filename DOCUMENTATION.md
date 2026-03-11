@@ -191,6 +191,9 @@ Dalším krokem byla úprava metadat ve všech HTML souborech. Do `<head>` jsme 
 
 Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali `festival.xml` jako hlavní datový zdroj a vytvořili `festival.xsd` pro validaci (včetně vlastních omezení typu pattern/rozsah). Přidali jsme XSLT šablony do `data/xslt/`, které převádějí XML na JSON, a vygenerovali výstupy do `data/json/`. Spuštění transformace zajišťuje skript `data/transform.ps1`.
 
+Další krok byl doplnění napojení na API. V HTML jsme zanechali odkaz na XML endpoint a do `program.html` jsme přidali načítání `festival.xml` pomocí `fetch`, aby se program mohl generovat z dat. Tím se zajistilo, že obsah stránky odpovídá datům v XML a změny v `festival.xml` se mohou promítnout do programu.
+
+
 
 
 
@@ -204,6 +207,7 @@ Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali 
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
+
 
 
 
