@@ -246,3 +246,30 @@ Důkaz (entity v XML):
 <events>
 ```
 
+### Ověření: povinné stránky (samostatné HTML soubory)
+- Úvodní stránka: `web/index.html`
+- Program: `web/program.html`
+- Účinkující: `web/performers.html`
+- Praktické informace: `web/info.html`
+
+Důkaz (soubory ve složce `web/`):
+```
+index.html
+program.html
+performers.html
+info.html
+```
+
+Důkaz (seznam + detail účinkujících):
+```
+<h2>Seznam interpretů</h2>
+<h2>Detail účinkujících</h2>
+```
+
+Důkaz (praktické informace – místo, doprava/parkování, ubytování):
+```
+<h2>Místo konání</h2>
+<h2>Doprava a parkování</h2>
+<h2>Ubytování</h2>
+```
+
