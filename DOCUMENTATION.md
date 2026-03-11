@@ -127,3 +127,13 @@ http://localhost:8000/index.html
 ---
 
 Pokud chcete něco rozšířit nebo upravit, doplňte do této dokumentace konkrétní část.
+## 8) Průběh práce (chronologicky)
+
+1. Zkontrolovali jsme sémantické HTML a metadata.
+2. Opravili jsme `og:image` na Lorem Picsum v HTML souborech.
+3. Přidali jsme `aside` do `info.html` kvůli povinnému prvku.
+4. Upravili jsme `program.html` tak, aby program vycházel z dat `festival.xml` (JS načítání a render).
+5. Zredukovali jsme CSS na požadovaný rozsah 50–100 řádků.
+6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
+7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
+8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
