@@ -139,3 +139,4 @@ Na úplném začátku jsme použili Gemini k rychlému vygenerování základní
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
 
+
