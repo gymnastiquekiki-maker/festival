@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iron Forge Prague 2026 — Transformace XML → JSON</title>
+  <meta name="description" content="Klientská transformace festival.xml do JSON přes XSLT.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Transformace XML → JSON</h1>
+      <p>Spuštění přímo v prohlížeči pomocí XSLTProcessor.</p>
+    </div>
+    <nav aria-label="Hlavní navigace">
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="performers.html">Účinkující</a></li>
+        <li><a href="info.html">Praktické informace</a></li>
+        <li class="nav-cta"><a class="btn" href="transform.html" aria-current="page">Transformace</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Výstupy</h2>
+      <p>Tlačítkem spustíš transformaci `festival.xml` přes XSLT a získáš JSON. Výstupy můžeš stáhnout.</p>
+      <button class="btn" id="run">Spustit transformaci</button>
+    </section>
+
+    <section>
+      <h2>JSON náhled</h2>
+      <pre id="output" style="white-space: pre-wrap; background: rgba(20,20,23,.95); padding: 1rem; border-radius: 10px; border: 1px solid #2b2b31;">Klikni na "Spustit transformaci".</pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Iron Forge Prague.</p>
+  </footer>
+
+  <script src="transform.js"></script>
+</body>
+</html>
