@@ -140,3 +140,4 @@ Na úplném začátku jsme použili Gemini k rychlému vygenerování základní
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
 
 
+
