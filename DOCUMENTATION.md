@@ -127,9 +127,36 @@ http://localhost:8000/index.html
 ---
 
 Pokud chcete něco rozšířit nebo upravit, doplňte do této dokumentace konkrétní část.
+
 ## 8) Průběh práce (chronologicky)
 
 Na úplném začátku jsme použili Gemini k rychlému vygenerování základních podkladů do složky `projekt/`. Vznikly soubory `festival.xml` a `specifications.md`, protože jsme potřebovali mít od začátku datový zdroj a sepsané požadavky projektu. Do promptu jsme vložili požadavky z Moodlu a současně jsme určili téma – festival bude metalový – aby všechny další materiály (texty, struktura i data) odpovídaly zvolenému žánru.
+
+Dalším krokem bylo založení projektu v Gitu.
+
+Následně vznikl základní datový soubor `festival.xml`. Ten slouží jako hlavní datový zdroj pro celý projekt – obsahuje:
+- `info` (název festivalu, ročník, místo a datum),
+- `venues` (seznam scén),
+- `performers` (seznam interpretů),
+- `events` (harmonogram – vazby mezi interpretem, scénou, datem a časem).
+Díky tomu jsou všechna data na webu konzistentní a mohou se z XML dále zpracovávat (např. validace nebo transformace do JSON).
+
+Současně jsme vytvořili první HTML stránky:
+
+`index.html`
+Stránka je rozdělená na samostatné sekce pomocí `<section>`, což jasně odděluje jednotlivé části obsahu.
+- `<header>` obsahuje název festivalu a hlavní navigaci, která propojuje všechny stránky.
+- `<main>` drží hlavní obsah stránky a dělí ho na tematické bloky: úvodní hero, informace o festivalu, základní fakta, scény, galerie a vstupenky.
+- `<footer>` uzavírá stránku a nese drobné organizační informace.
+Smyslem je, aby uživatel okamžitě pochopil hlavní informace a snadno se zorientoval.
+
+`info.html`
+Tato stránka je zaměřená na praktické informace a také je členěná do více samostatných sekcí.
+- `<header>` a `<nav>` jsou stejné jako na ostatních stránkách, aby byla navigace konzistentní.
+- `<main>` obsahuje bloky: místo konání (s adresou), doprava a parkování, ubytování, bezpečnost, pravidla vstupu a služby v areálu.
+- Každá část má vlastní nadpis (`<h2>`), aby bylo jasné rozdělení obsahu.
+Cílem je oddělit jednotlivá témata tak, aby návštěvník rychle našel konkrétní informaci.
+
 1. Zkontrolovali jsme sémantické HTML a metadata.
 2. Opravili jsme `og:image` na Lorem Picsum v HTML souborech.
 3. Přidali jsme `aside` do `info.html` kvůli povinnému prvku.
@@ -138,6 +165,4 @@ Na úplném začátku jsme použili Gemini k rychlému vygenerování základní
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
-
-
 
