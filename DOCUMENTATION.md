@@ -193,6 +193,9 @@ Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali 
 
 Další krok byl doplnění napojení na API. V HTML jsme zanechali odkaz na XML endpoint a do `program.html` jsme přidali načítání `festival.xml` pomocí `fetch`, aby se program mohl generovat z dat. Tím se zajistilo, že obsah stránky odpovídá datům v XML a změny v `festival.xml` se mohou promítnout do programu.
 
+Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali jednotlivé požadavky a vyžadovali ověření i konkrétní důkazy z kódu.
+
+
 
 
 
@@ -207,6 +210,7 @@ Další krok byl doplnění napojení na API. V HTML jsme zanechali odkaz na XML
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
+
 
 
 
