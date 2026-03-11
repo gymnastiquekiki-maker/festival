@@ -407,3 +407,27 @@ Důkaz (aside/address/time/ul/ol/li/h3):
 <h3>MHD</h3>
 ```
 
+### Ověření: CSS
+- 1× externí soubor (`style.css`).
+- 50–100 řádků: aktuálně 67.
+- Baseline: barvy, fonty, pozadí, oddělení sekcí.
+- Bez frameworků a knihoven.
+
+Důkaz (externí CSS):
+```
+<link rel="stylesheet" href="style.css">
+```
+
+Důkaz (počet řádků):
+```
+Lines: 67
+```
+
+Důkaz (barvy/fonty/pozadí/oddělení sekcí):
+```
+:root{ ... --font-body ... --font-display ... }
+body{ ... background: radial-gradient(...) ... }
+section,article,aside{ ... border ... padding ... }
+@font-face{ ... }
+```
+
