@@ -339,3 +339,26 @@ Důkaz (JSON‑LD eventy):
 </script>
 ```
 
+### Ověření: napojení na API
+- HTML odkazuje na XML endpoint přes `link rel="alternate"`.
+- Sekce mají `data-endpoint` s vazbou na části XML.
+- Program načítá `festival.xml` přes `fetch`.
+
+Důkaz (odkaz na endpoint):
+```
+<link rel="alternate" type="application/xml" href="festival.xml" title="Festival API (XML)">
+```
+
+Důkaz (data-endpoint):
+```
+<section id="about" data-endpoint="festival.xml#info">
+<section id="venues" data-endpoint="festival.xml#venues">
+<section id="list" data-endpoint="festival.xml#performers">
+<section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14">
+```
+
+Důkaz (fetch v programu):
+```
+var url = "festival.xml";
+```
+
