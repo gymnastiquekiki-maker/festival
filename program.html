@@ -7,7 +7,7 @@
   <meta name="description" content="Program metalového festivalu Iron Forge Prague 2026 rozdělený podle dnů a scén.">
   <meta property="og:title" content="Iron Forge Prague 2026 — Program">
   <meta property="og:description" content="Harmonogram pro 14.–16. 8. 2026, dvě scény a 60 interpretů.">
-  <meta property="og:image" content="https://gymnastiquekiki-maker.github.io/festival/Black-Metal-Logos-4.jpg">
+  <meta property="og:image" content="https://picsum.photos/1200/630?random=1">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://gymnastiquekiki-maker.github.io/festival/Black-Metal-Logos-4.jpg">
   <link rel="stylesheet" href="styles.css">
@@ -97,7 +97,7 @@
       </div>
     </section>
 
-    <section id="day-1" data-endpoint="festival.xml#events">
+    <section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14">
       <h2>Pátek 14. 8. 2026</h2>
       <article>
         <h3>Steel Stage</h3>
@@ -131,7 +131,7 @@
       </article>
     </section>
 
-    <section id="day-2" data-endpoint="festival.xml#events">
+    <section id="day-2" data-endpoint="festival.xml#events" data-date="2026-08-15">
       <h2>Sobota 15. 8. 2026</h2>
       <article>
         <h3>Steel Stage</h3>
@@ -165,7 +165,7 @@
       </article>
     </section>
 
-    <section id="day-3" data-endpoint="festival.xml#events">
+    <section id="day-3" data-endpoint="festival.xml#events" data-date="2026-08-16">
       <h2>Neděle 16. 8. 2026</h2>
       <article>
         <h3>Steel Stage</h3>
@@ -204,8 +204,108 @@
     <p>&copy; 2026 Iron Forge Prague.</p>
     <p class="api-note">api zdroje: data pro web vychází z festivalového xml endpointu. /api/festival (xml)</p>
   </footer>
+  <script>
+  (function () {
+    var url = "festival.xml";
+    function parseXml(text) {
+      var xml = new DOMParser().parseFromString(text, "application/xml");
+      if (xml.querySelector("parsererror")) {
+        throw new Error("XML parse error");
+      }
+      return xml;
+    }
+    function mapById(nodes) {
+      var map = new Map();
+      nodes.forEach(function (node) {
+        map.set(node.getAttribute("id"), (node.textContent || "").trim());
+      });
+      return map;
+    }
+    function buildSchedule(xml) {
+      var performers = mapById(Array.from(xml.querySelectorAll("performers > performer")));
+      var venues = mapById(Array.from(xml.querySelectorAll("venues > venue")));
+      var events = Array.from(xml.querySelectorAll("events > event")).map(function (e) {
+        return {
+          date: e.getAttribute("date"),
+          time: e.getAttribute("time"),
+          performerId: e.getAttribute("performer_id"),
+          venueId: e.getAttribute("venue_id")
+        };
+      });
+
+      var sections = Array.from(document.querySelectorAll("section[data-endpoint=\"festival.xml#events\"][data-date]"));
+      sections.forEach(function (section) {
+        var date = section.dataset.date;
+        var dayEvents = events.filter(function (ev) { return ev.date === date; });
+        if (dayEvents.length === 0) {
+          return;
+        }
+
+        var byVenue = new Map();
+        dayEvents.forEach(function (ev) {
+          var venue = venues.get(ev.venueId) || ev.venueId;
+          var performer = performers.get(ev.performerId) || ev.performerId;
+          if (!byVenue.has(venue)) {
+            byVenue.set(venue, []);
+          }
+          byVenue.get(venue).push({ time: ev.time, performer: performer });
+        });
+
+        byVenue.forEach(function (list) {
+          list.sort(function (a, b) { return a.time.localeCompare(b.time); });
+        });
+
+        var fragment = document.createDocumentFragment();
+        var h2 = section.querySelector("h2");
+        if (h2) {
+          fragment.appendChild(h2.cloneNode(true));
+        }
+
+        byVenue.forEach(function (list, venueName) {
+          var article = document.createElement("article");
+          var h3 = document.createElement("h3");
+          h3.textContent = venueName;
+          article.appendChild(h3);
+
+          var ul = document.createElement("ul");
+          list.forEach(function (item) {
+            var li = document.createElement("li");
+            var time = document.createElement("time");
+            time.setAttribute("datetime", date + "T" + item.time);
+            time.textContent = item.time;
+            li.appendChild(time);
+            li.appendChild(document.createTextNode(" " + item.performer));
+            ul.appendChild(li);
+          });
+          article.appendChild(ul);
+          fragment.appendChild(article);
+        });
+
+        section.innerHTML = "";
+        section.appendChild(fragment);
+      });
+    }
+
+    fetch(url, { cache: "no-store" })
+      .then(function (res) {
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+        return res.text();
+      })
+      .then(function (text) {
+        var xml = parseXml(text);
+        buildSchedule(xml);
+      })
+      .catch(function () {
+        // Fallback: keep static HTML if the API is unavailable.
+      });
+  })();
+  </script>
 </body>
 </html>
+
+
 
 
 
