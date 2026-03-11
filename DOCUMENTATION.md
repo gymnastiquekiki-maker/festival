@@ -181,6 +181,9 @@ CSS nastavuje:
 
 Díky tomu mají všechny stránky jednotný vizuální styl a konzistentní strukturu.
 
+Následovaly postupné úpravy CSS – za pomoci GPT 5.2‑Codex. Nejprve jsme do `styles.css` přidali vlastní font pomocí `@font-face` a nastavili hlavní typografii (`--font-body`, `--font-display`). Poté jsme dolaďovali layout přes konkrétní třídy jako `.hero` (hlavní úvodní blok), `.tickets-layout` (rozvržení vstupenek) a `.performer-card` (karty interpretů). Součástí úprav bylo i sjednocení vzhledu sekcí (`section, article, aside`), tlačítek (`.btn`) a práce s obrázky (`img`, `.gallery`, `.hero-media`). Zároveň jsme do HTML doplnili vlastní obrázky – například hero/galerii v `index.html` a profilové fotky v `performers.html`.
+
+
 
 
 1. Zkontrolovali jsme sémantické HTML a metadata.
@@ -191,6 +194,7 @@ Díky tomu mají všechny stránky jednotný vizuální styl a konzistentní str
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
+
 
 
 
