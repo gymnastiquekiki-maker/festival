@@ -7,9 +7,7 @@
     return;
   }
 
-  var lastResults = null;
-
-  var transforms = [
+  var lastResults = null;\n\n  output.textContent = "Připraveno. Klikni na Spustit transformaci.";\n\nvar transforms = [
     { name: "info.json", xslt: "xslt/festival-info.xslt", match: "/festival/info" },
     { name: "venues.json", xslt: "xslt/festival-venues.xslt", match: "/festival/venues" },
     { name: "performers.json", xslt: "xslt/festival-performers.xslt", match: "/festival/performers" },
@@ -93,3 +91,4 @@
     });
   }
 })();
+
