@@ -129,6 +129,7 @@ http://localhost:8000/index.html
 Pokud chcete něco rozšířit nebo upravit, doplňte do této dokumentace konkrétní část.
 ## 8) Průběh práce (chronologicky)
 
+Na úplném začátku jsme použili Gemini k rychlému vygenerování základních podkladů do složky `projekt/`. Vznikly soubory `festival.xml` a `specifications.md`, protože jsme potřebovali mít od začátku datový zdroj a sepsané požadavky projektu. Do promptu jsme vložili požadavky z Moodlu a současně jsme určili téma – festival bude metalový – aby všechny další materiály (texty, struktura i data) odpovídaly zvolenému žánru.
 1. Zkontrolovali jsme sémantické HTML a metadata.
 2. Opravili jsme `og:image` na Lorem Picsum v HTML souborech.
 3. Přidali jsme `aside` do `info.html` kvůli povinnému prvku.
@@ -137,3 +138,4 @@ Pokud chcete něco rozšířit nebo upravit, doplňte do této dokumentace konkr
 6. Připravili jsme složku `web/` pro odevzdání (HTML + `style.css` + assets).
 7. Vytvořili jsme `data/` s XML, XSD, XSLT, JSON výstupy a skriptem `transform.ps1`.
 8. Krátce jsme zkoušeli stránku pro transformaci v prohlížeči, ale následně jsme ji kompletně odstranili.
+
