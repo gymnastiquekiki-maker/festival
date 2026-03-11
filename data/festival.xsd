@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="festival">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="info" type="InfoType"/>
+        <xs:element name="venues" type="VenuesType"/>
+        <xs:element name="performers" type="PerformersType"/>
+        <xs:element name="events" type="EventsType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="InfoType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="edition" type="EditionType"/>
+      <xs:element name="location" type="xs:string"/>
+      <xs:element name="start_date" type="DateType"/>
+      <xs:element name="end_date" type="DateType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VenuesType">
+    <xs:sequence>
+      <xs:element name="venue" type="VenueType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VenueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="VenueIdType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PerformersType">
+    <xs:sequence>
+      <xs:element name="performer" type="PerformerType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PerformerType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="PerformerIdType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="EventsType">
+    <xs:sequence>
+      <xs:element name="event" type="EventType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EventType">
+    <xs:attribute name="id" type="EventIdType" use="required"/>
+    <xs:attribute name="venue_id" type="VenueIdType" use="required"/>
+    <xs:attribute name="performer_id" type="PerformerIdType" use="required"/>
+    <xs:attribute name="date" type="DateType" use="required"/>
+    <xs:attribute name="time" type="TimeType" use="required"/>
+  </xs:complexType>
+
+  <!-- Vlastní omezení: ročník festivalu jako kladné celé číslo v rozsahu 1–99 -->
+  <xs:simpleType name="EditionType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: pattern pro datum YYYY-MM-DD -->
+  <xs:simpleType name="DateType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: pattern pro čas HH:MM (24h) -->
+  <xs:simpleType name="TimeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([01]\d|2[0-3]):[0-5]\d"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: ID lokace ve tvaru vN -->
+  <xs:simpleType name="VenueIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="v\d+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: ID interpreta ve tvaru pN -->
+  <xs:simpleType name="PerformerIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="p\d+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: ID eventu ve tvaru eN -->
+  <xs:simpleType name="EventIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="e\d+"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
