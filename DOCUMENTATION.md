@@ -362,3 +362,48 @@ Důkaz (fetch v programu):
 var url = "festival.xml";
 ```
 
+### Ověření: povinné elementy
+- `head`, `meta`, `title`, `header`, `footer`, `p`, `a`, `img`, `h1`, `h2`.
+- `section` min. 3×.
+- `article` min. 3×.
+- `aside`, `address`, `time`, `ul/ol`, `li`, `h3`.
+
+Důkaz (head/meta/title/header/footer/p/a/img/h1/h2):
+```
+<head>
+<meta charset="utf-8">
+<title>Iron Forge Prague 2026 — Úvod</title>
+<header class="site-header">
+<footer class="site-footer">
+<p>...</p>
+<a ...>
+<img ...>
+<h1>Iron Forge Prague 2026</h1>
+<h2>O festivalu</h2>
+```
+
+Důkaz (section min. 3×):
+```
+<section class="hero">
+<section id="day-1" ...>
+<section id="day-2" ...>
+<section id="day-3" ...>
+```
+
+Důkaz (article min. 3×):
+```
+<article class="performer-card">
+<article class="performer-card">
+<article class="performer-card">
+```
+
+Důkaz (aside/address/time/ul/ol/li/h3):
+```
+<aside aria-label="Upozornění">
+<address>
+<time datetime="2026-08-14T16:00">16:00</time>
+<ul> ... <li> ... </li>
+<ol> ... <li> ... </li>
+<h3>MHD</h3>
+```
+
