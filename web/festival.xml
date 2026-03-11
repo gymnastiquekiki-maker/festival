@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<festival>
+    <info>
+        <name>Iron Forge Prague</name>
+        <edition>5</edition>
+        <location>Nákladové nádraží Žižkov, Praha</location>
+        <start_date>2026-08-14</start_date>
+        <end_date>2026-08-16</end_date>
+    </info>
+
+    <venues>
+        <venue id="v1">Steel Stage</venue>
+        <venue id="v2">Pyro Hall</venue>
+    </venues>
+
+    <performers>
+        <performer id="p1">Metallica</performer>
+        <performer id="p2">Iron Maiden</performer>
+        <performer id="p3">Megadeth</performer>
+        <performer id="p4">Slayer</performer>
+        <performer id="p5">Slipknot</performer>
+        <performer id="p6">Black Sabbath</performer>
+        <performer id="p7">Judas Priest</performer>
+        <performer id="p8">Pantera</performer>
+        <performer id="p9">Tool</performer>
+        <performer id="p10">Mastodon</performer>
+        <performer id="p11">Lamb of God</performer>
+        <performer id="p12">Gojira</performer>
+        <performer id="p13">Opeth</performer>
+        <performer id="p14">Dream Theater</performer>
+        <performer id="p15">Nightwish</performer>
+        <performer id="p16">Rammstein</performer>
+        <performer id="p17">Sabaton</performer>
+        <performer id="p18">Amon Amarth</performer>
+        <performer id="p19">Arch Enemy</performer>
+        <performer id="p20">In Flames</performer>
+        <performer id="p21">Sepultura</performer>
+        <performer id="p22">System of a Down</performer>
+        <performer id="p23">Korn</performer>
+        <performer id="p24">Deftones</performer>
+        <performer id="p25">Avenged Sevenfold</performer>
+        <performer id="p26">Trivium</performer>
+        <performer id="p27">Killswitch Engage</performer>
+        <performer id="p28">Parkway Drive</performer>
+        <performer id="p29">Behemoth</performer>
+        <performer id="p30">Dimmu Borgir</performer>
+        <performer id="p31">Immortal</performer>
+        <performer id="p32">Emperor</performer>
+        <performer id="p33">Mayhem</performer>
+        <performer id="p34">Darkthrone</performer>
+        <performer id="p35">Cannibal Corpse</performer>
+        <performer id="p36">Morbid Angel</performer>
+        <performer id="p37">Death</performer>
+        <performer id="p38">Carcass</performer>
+        <performer id="p39">Napalm Death</performer>
+        <performer id="p40">Meshuggah</performer>
+        <performer id="p41">Within Temptation</performer>
+        <performer id="p42">Epica</performer>
+        <performer id="p43">Kreator</performer>
+        <performer id="p44">Sodom</performer>
+        <performer id="p45">Testament</performer>
+        <performer id="p46">Exodus</performer>
+        <performer id="p47">Anthrax</performer>
+        <performer id="p48">Alice in Chains</performer>
+        <performer id="p49">Ghost</performer>
+        <performer id="p50">Powerwolf</performer>
+        <performer id="p51">Helloween</performer>
+        <performer id="p52">Blind Guardian</performer>
+        <performer id="p53">Accept</performer>
+        <performer id="p54">Saxon</performer>
+        <performer id="p55">Dio</performer>
+        <performer id="p56">Motörhead</performer>
+        <performer id="p57">Whitesnake</performer>
+        <performer id="p58">Scorpions</performer>
+        <performer id="p59">Children of Bodom</performer>
+        <performer id="p60">Devin Townsend</performer>
+    </performers>
+
+    <events>
+        <event id="e1" venue_id="v1" performer_id="p1" date="2026-08-14" time="18:00" />
+        <event id="e2" venue_id="v2" performer_id="p16" date="2026-08-14" time="18:00" />
+        <event id="e3" venue_id="v1" performer_id="p2" date="2026-08-14" time="19:30" />
+        <event id="e4" venue_id="v2" performer_id="p17" date="2026-08-14" time="19:30" />
+        <event id="e5" venue_id="v1" performer_id="p3" date="2026-08-14" time="21:00" />
+        <event id="e6" venue_id="v2" performer_id="p18" date="2026-08-14" time="21:00" />
+        <event id="e7" venue_id="v1" performer_id="p4" date="2026-08-14" time="22:30" />
+        <event id="e8" venue_id="v2" performer_id="p19" date="2026-08-14" time="22:30" />
+        <event id="e9" venue_id="v1" performer_id="p5" date="2026-08-14" time="00:00" />
+        <event id="e10" venue_id="v2" performer_id="p20" date="2026-08-14" time="00:00" />
+        <event id="e11" venue_id="v1" performer_id="p6" date="2026-08-14" time="01:30" />
+        <event id="e12" venue_id="v2" performer_id="p21" date="2026-08-14" time="01:30" />
+        <event id="e13" venue_id="v1" performer_id="p41" date="2026-08-14" time="03:00" />
+        <event id="e14" venue_id="v2" performer_id="p22" date="2026-08-14" time="03:00" />
+        <event id="e15" venue_id="v1" performer_id="p42" date="2026-08-14" time="04:30" />
+        <event id="e16" venue_id="v2" performer_id="p31" date="2026-08-14" time="04:30" />
+        <event id="e17" venue_id="v1" performer_id="p43" date="2026-08-14" time="06:00" />
+        <event id="e18" venue_id="v2" performer_id="p32" date="2026-08-14" time="06:00" />
+        <event id="e19" venue_id="v1" performer_id="p44" date="2026-08-14" time="07:30" />
+        <event id="e20" venue_id="v2" performer_id="p33" date="2026-08-14" time="07:30" />
+
+        <event id="e21" venue_id="v1" performer_id="p7" date="2026-08-15" time="18:00" />
+        <event id="e22" venue_id="v2" performer_id="p23" date="2026-08-15" time="18:00" />
+        <event id="e23" venue_id="v1" performer_id="p8" date="2026-08-15" time="19:30" />
+        <event id="e24" venue_id="v2" performer_id="p24" date="2026-08-15" time="19:30" />
+        <event id="e25" venue_id="v1" performer_id="p9" date="2026-08-15" time="21:00" />
+        <event id="e26" venue_id="v2" performer_id="p25" date="2026-08-15" time="21:00" />
+        <event id="e27" venue_id="v1" performer_id="p10" date="2026-08-15" time="22:30" />
+        <event id="e28" venue_id="v2" performer_id="p26" date="2026-08-15" time="22:30" />
+        <event id="e29" venue_id="v1" performer_id="p11" date="2026-08-15" time="00:00" />
+        <event id="e30" venue_id="v2" performer_id="p27" date="2026-08-15" time="00:00" />
+        <event id="e31" venue_id="v1" performer_id="p12" date="2026-08-15" time="01:30" />
+        <event id="e32" venue_id="v2" performer_id="p28" date="2026-08-15" time="01:30" />
+        <event id="e33" venue_id="v1" performer_id="p45" date="2026-08-15" time="03:00" />
+        <event id="e34" venue_id="v2" performer_id="p29" date="2026-08-15" time="03:00" />
+        <event id="e35" venue_id="v1" performer_id="p46" date="2026-08-15" time="04:30" />
+        <event id="e36" venue_id="v2" performer_id="p34" date="2026-08-15" time="04:30" />
+        <event id="e37" venue_id="v1" performer_id="p47" date="2026-08-15" time="06:00" />
+        <event id="e38" venue_id="v2" performer_id="p35" date="2026-08-15" time="06:00" />
+        <event id="e39" venue_id="v1" performer_id="p48" date="2026-08-15" time="07:30" />
+        <event id="e40" venue_id="v2" performer_id="p36" date="2026-08-15" time="07:30" />
+
+        <event id="e41" venue_id="v1" performer_id="p56" date="2026-08-16" time="16:00" />
+        <event id="e42" venue_id="v2" performer_id="p37" date="2026-08-16" time="16:00" />
+        <event id="e43" venue_id="v1" performer_id="p57" date="2026-08-16" time="17:30" />
+        <event id="e44" venue_id="v2" performer_id="p38" date="2026-08-16" time="17:30" />
+        <event id="e45" venue_id="v1" performer_id="p58" date="2026-08-16" time="19:00" />
+        <event id="e46" venue_id="v2" performer_id="p39" date="2026-08-16" time="19:00" />
+        <event id="e47" venue_id="v1" performer_id="p59" date="2026-08-16" time="20:30" />
+        <event id="e48" venue_id="v2" performer_id="p40" date="2026-08-16" time="20:30" />
+        <event id="e49" venue_id="v1" performer_id="p60" date="2026-08-16" time="22:00" />
+        <event id="e50" venue_id="v2" performer_id="p30" date="2026-08-16" time="22:00" />
+        <event id="e51" venue_id="v1" performer_id="p13" date="2026-08-16" time="23:30" />
+        <event id="e52" venue_id="v2" performer_id="p49" date="2026-08-16" time="23:30" />
+        <event id="e53" venue_id="v1" performer_id="p14" date="2026-08-16" time="01:00" />
+        <event id="e54" venue_id="v2" performer_id="p50" date="2026-08-16" time="01:00" />
+        <event id="e55" venue_id="v1" performer_id="p15" date="2026-08-16" time="02:30" />
+        <event id="e56" venue_id="v2" performer_id="p51" date="2026-08-16" time="02:30" />
+        <event id="e57" venue_id="v1" performer_id="p52" date="2026-08-16" time="04:00" />
+        <event id="e58" venue_id="v2" performer_id="p53" date="2026-08-16" time="04:00" />
+        <event id="e59" venue_id="v1" performer_id="p54" date="2026-08-16" time="05:30" />
+        <event id="e60" venue_id="v2" performer_id="p55" date="2026-08-16" time="05:30" />
+    </events>
+</festival>
