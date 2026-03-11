@@ -218,3 +218,31 @@ Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali
 
 
 
+
+## 9) Ověření požadavků
+
+### Ověření: výchozí datová základna `festival.xml`
+- well‑formed XML: soubor se načte bez chyby XML parserem.
+- min. 3 dny: `2026-08-14` až `2026-08-16` → 3 dny.
+- min. 2 místa: 2 venues.
+- min. 60 účinkujících: 60 performers.
+- min. 60 programových položek: 60 events.
+- minimální entity: `<festival>`, `<venues>`, `<performers>`, `<events>`.
+
+Důkaz (počty a dny):
+```
+venues     : 2
+performers : 60
+events     : 60
+start_date : 2026-08-14
+end_date   : 2026-08-16
+days       : 3
+```
+Důkaz (entity v XML):
+```
+<festival>
+<venues>
+<performers>
+<events>
+```
+
