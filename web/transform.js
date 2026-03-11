@@ -1,13 +1,11 @@
 ﻿(function () {
-  var runBtn = document.getElementById("run");
-  var output = document.getElementById("output");
-  var downloadToggle = document.getElementById("download");
+  var runBtn = document.getElementById("run");\n  var output = document.getElementById("output");\n  var downloadBtn = document.getElementById("downloadBtn");
 
   if (!runBtn || !output) {
     return;
   }
 
-  var transforms = [
+  var lastResults = null;\n\n  var transforms = [
     { name: "info.json", xslt: "xslt/festival-info.xslt", match: "/festival/info" },
     { name: "venues.json", xslt: "xslt/festival-venues.xslt", match: "/festival/venues" },
     { name: "performers.json", xslt: "xslt/festival-performers.xslt", match: "/festival/performers" },
@@ -71,7 +69,7 @@
           results.push({ name: t.name, json: jsonText });
         });
 
-        output.textContent = results.map(function (r) { return "// " + r.name + "\n" + r.json; }).join("\n\n");
+        lastResults = results;\n\n        output.textContent = results.map(function (r) { return "// " + r.name + "\n" + r.json; }).join("\n\n");
 
         if (downloadToggle && downloadToggle.checked) {
           results.forEach(function (r) {
@@ -84,3 +82,4 @@
       });
   });
 })();
+
