@@ -300,3 +300,42 @@ Důkaz (time v programu):
 <li><time datetime="2026-08-14T18:00">18:00</time> Metallica</li>
 ```
 
+### Ověření: metadata
+- `title` + `meta name="description"` jsou na stránkách.
+- Open Graph minimum (`og:title`, `og:description`, `og:image` s Lorem Picsum).
+- JSON‑LD pro festival i eventy.
+
+Důkaz (title + description):
+```
+<title>Iron Forge Prague 2026 — Úvod</title>
+<meta name="description" content="Iron Forge Prague 2026: metalový festival v prostoru Nákladového nádraží Žižkov.">
+```
+
+Důkaz (Open Graph minimum):
+```
+<meta property="og:title" content="Iron Forge Prague 2026">
+<meta property="og:description" content="Třídenní metalový festival — Praha, 14.–16. 8. 2026.">
+<meta property="og:image" content="https://picsum.photos/1200/630?random=1">
+```
+
+Důkaz (JSON‑LD festival):
+```
+<script type="application/ld+json">
+{
+  "@type": "MusicFestival",
+  ...
+}
+</script>
+```
+
+Důkaz (JSON‑LD eventy):
+```
+<script type="application/ld+json">
+{
+  "@graph": [
+    { "@type": "Event", ... }
+  ]
+}
+</script>
+```
+
