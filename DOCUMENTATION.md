@@ -431,3 +431,43 @@ section,article,aside{ ... border ... padding ... }
 @font-face{ ... }
 ```
 
+### Ověření: datová základna
+- `data/festival.xml` existuje.
+- `data/festival.xsd` obsahuje vlastní omezení s komentáři.
+- XSLT → JSON transformace je funkční a spustitelná (`data/transform.ps1`).
+- Výstupy JSON odpovídají API (info, venues, performers, events).
+
+Důkaz (XSD omezení + komentáře):
+```
+<!-- Vlastní omezení: ročník festivalu jako kladné celé číslo v rozsahu 1–99 -->
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="99"/>
+
+<!-- Vlastní omezení: pattern pro datum YYYY-MM-DD -->
+<xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+```
+
+Důkaz (XSLT soubory):
+```
+festival-info.xslt
+festival-venues.xslt
+festival-performers.xslt
+festival-events.xslt
+```
+
+Důkaz (JSON výstupy):
+```
+info.json
+venues.json
+performers.json
+events.json
+```
+
+Důkaz (mapování v transform.ps1):
+```
+"festival-info.xslt" = "info.json"
+"festival-venues.xslt" = "venues.json"
+"festival-performers.xslt" = "performers.json"
+"festival-events.xslt" = "events.json"
+```
+
