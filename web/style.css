@@ -72,10 +72,12 @@ img{max-width:100%;border-radius:var(--radius);display:block;}
 .performer-text h3{margin:0 0 .25rem 0;}
 .api-note{font-size:.75rem;color:var(--muted);margin:.5rem 0 0 0;}
 
-@media (max-width:820px){
+.footer-actions{margin-top:.5rem;display:flex;gap:.75rem;justify-content:center;align-items:center;flex-wrap:wrap;}
+.btn-small{padding:.35rem .7rem;font-size:.75rem;}@media (max-width:820px){
   .hero{grid-template-columns:1fr;}
   nav ul{flex-wrap:wrap;}
   .nav-cta{margin-left:0;}
   .tickets-layout{grid-template-columns:1fr;}
   .columns{columns:1;}
 }
+
