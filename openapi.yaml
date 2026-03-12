@@ -1,0 +1,165 @@
+﻿openapi: 3.1.0
+info:
+  title: Iron Forge Prague API
+  version: 1.0.0
+  summary: Ukázkové REST API pro festivalová data
+  description: |-
+    API vrací JSON výstupy generované z XML přes XSLT transformace.
+    Datová základna: data/festival.xml
+servers:
+  - url: https://example.com/api
+    description: Placeholder server
+paths:
+  /info:
+    get:
+      summary: Základní informace o festivalu
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FestivalInfo'
+              example:
+                name: Iron Forge Prague
+                edition: 5
+                location: Nákladové nádraží Žižkov, Praha
+                start_date: 2026-08-14
+                end_date: 2026-08-16
+  /venues:
+    get:
+      summary: Seznam pódií
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Venue'
+              example:
+                - id: v1
+                  name: Steel Stage
+                - id: v2
+                  name: Pyro Hall
+  /performers:
+    get:
+      summary: Seznam interpretů
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Performer'
+              example:
+                - id: p1
+                  name: Metallica
+                - id: p2
+                  name: Iron Maiden
+  /events:
+    get:
+      summary: Program (přiřazení interpreta a pódia v čase)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+              example:
+                - id: e1
+                  venue_id: v1
+                  performer_id: p1
+                  date: 2026-08-14
+                  time: '18:00'
+                - id: e2
+                  venue_id: v2
+                  performer_id: p16
+                  date: 2026-08-14
+                  time: '18:00'
+components:
+  schemas:
+    FestivalInfo:
+      type: object
+      additionalProperties: false
+      required:
+        - name
+        - edition
+        - location
+        - start_date
+        - end_date
+      properties:
+        name:
+          type: string
+          minLength: 1
+        edition:
+          type: integer
+          minimum: 1
+          maximum: 99
+        location:
+          type: string
+          minLength: 5
+          maxLength: 120
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+    Venue:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          pattern: '^v[1-9]\\d*$'
+        name:
+          type: string
+          minLength: 1
+    Performer:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          pattern: '^p[1-9]\\d*$'
+        name:
+          type: string
+          minLength: 1
+    Event:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - venue_id
+        - performer_id
+        - date
+        - time
+      properties:
+        id:
+          type: string
+          pattern: '^e[1-9]\\d*$'
+        venue_id:
+          type: string
+          pattern: '^v[1-9]\\d*$'
+        performer_id:
+          type: string
+          pattern: '^p[1-9]\\d*$'
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          pattern: '^([01]\\d|2[0-3]):[0-5]\\d$'
