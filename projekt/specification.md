@@ -1,26 +1,46 @@
-# Specifikace projektu: Techno festival "SUB-BASS PRAGUE 2026"
- 
+﻿# Specifikace projektu: Iron Forge Prague 2026
+
 ## Identita festivalu
 
-- **Název:** Sub-Bass Prague
-
+- **Název:** Iron Forge Prague 2026
 - **Ročník:** 5. ročník
-
 - **Lokalita:** Nákladové nádraží Žižkov, Praha
+- **Datum:** 14. 8. 2026 – 16. 8. 2026 (3 dny)
+- **Žánr:** metal (heavy, thrash, symfonický, extrémní)
 
-- **Datumový rozsah:** 14. 08. 2026 – 16. 08. 2026 (3 dny)
- 
-## Cílové publikum a charakter akce
+## Charakter a cílové publikum
 
-Festival je zaměřen na komunitu fanoušků undergroundové elektronické hudby se zaměřením na žánry **Techno, Industrial, Acid a Ambient**. Akce využívá syrovou estetiku opuštěného nádraží a propojuje hudební produkci s vizuálním uměním.
- 
-## Struktura webu
+Festival je zaměřen na fanoušky metalové hudby a klade důraz na energii živých koncertů, pyrotechniku a komunitní atmosféru. Vizuální styl webu pracuje s industriální estetikou, ohněm a masivním zvukem.
 
-1. **Úvod (Landing page):** Historie festivalu a vize 5. ročníku.
+## Struktura webu a obsah
 
-2. **Program:** Interaktivní harmonogram rozdělený podle dnů a scén.
+1. **Úvod (index.html)**
+   - Hero sekce, krátké představení festivalu a základní fakta.
+   - Přehled scén (Steel Stage, Pyro Hall).
+   - Galerie atmosféry.
+   - Sekce vstupenek (jednodenní, třídenní, VIP).
 
-3. **Účinkující:** Seznam 60+ interpretů s profily a ukázkami tvorby.
+2. **Program (program.html)**
+   - Harmonogram rozdělený podle dnů (Pátek 14. 8., Sobota 15. 8., Neděle 16. 8.).
+   - Dvě scény: Steel Stage a Pyro Hall.
+   - Program je v HTML uveden staticky a zároveň se může dynamicky přegenerovat z XML API.
 
-4. **Praktické informace:** Mapa areálu, doprava, bezpečnost a pravidla vstupu (18+).
- 
+3. **Účinkující (performers.html)**
+   - Seznam 60 kapel napříč subžánry metalu.
+   - Detailní profily vybraných interpretů s fotografií a odkazem na poslech.
+
+4. **Praktické informace (info.html)**
+   - Místo konání a mapa areálu (Nákladové nádraží Žižkov).
+   - Doprava, parkování, otevření bran (16:00).
+   - Ubytování, bezpečnost, pravidla vstupu (18+), služby a pyrotechnika.
+
+## Datové zdroje
+
+- Web využívá festivalové XML API `festival.xml` (alternativně označeno jako `/api/festival`).
+- Stránky obsahují `data-endpoint` odkazy na konkrétní části XML (info, venues, performers, events).
+
+## Funkční prvky
+
+- JSON-LD schema.org (MusicFestival + Event) pro SEO.
+- Dynamické načítání programu z XML na stránce `program.html` s fallbackem na statický HTML obsah.
+- Odkazy na vstupenky a externí mapu.
