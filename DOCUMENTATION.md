@@ -219,7 +219,13 @@ Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali
 
 
 
-## 9) Ověření požadavků
+
+### 2026-03-12
+- Opraveny JSON výstupy ve `data/json/` (odstranění ne‑JSON částí, zůstává pouze validní JSON).
+- Aktualizováno `data/festival.xsd`: přidána unikátnost ID, referenční integrita (`key`/`keyref`), zpřesněné typy (date, time, patterny), nové typy `NonEmptyTextType` a `LocationType`.
+- Opraveny XSLT šablony v `data/xslt/` (správné uvozovky v XPath) a znovu spuštěna transformace XML → JSON.
+- Ověřena validace `data/festival.xml` proti `data/festival.xsd`.
+- Vytvořena OpenAPI 3.1 specifikace v `openapi.yaml`.\n## 9) Ověření požadavků
 
 ### Ověření: výchozí datová základna `festival.xml`
 - well‑formed XML: soubor se načte bez chyby XML parserem.
@@ -470,4 +476,5 @@ Důkaz (mapování v transform.ps1):
 "festival-performers.xslt" = "performers.json"
 "festival-events.xslt" = "events.json"
 ```
+
 
