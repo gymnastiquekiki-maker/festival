@@ -106,9 +106,62 @@
   <footer class="site-footer">
     <p>&copy; 2026 Iron Forge Prague. Vstup 18+.</p>
     <p class="api-note">api zdroje: data pro web vychází z festivalového xml endpointu. /api/festival (xml)</p>
-  </footer>
-</body>
+    <div class="footer-actions">
+      <button class="btn btn-small" id="gen-events-json" type="button">JSON z XML</button>
+      <span class="api-note" id="gen-status" aria-live="polite"></span>
+    </div>  </footer>
+  <script>
+    (function () {
+      const button = document.getElementById("gen-events-json");
+      const status = document.getElementById("gen-status");
+
+      if (!button || !status) {
+        return;
+      }
+
+      async function transformToJson() {
+        const xmlUrl = "/data/festival.xml";
+        const xsltUrl = "/data/xslt/festival-events.xslt";
+
+        const [xmlText, xsltText] = await Promise.all([
+          fetch(xmlUrl).then((r) => r.text()),
+          fetch(xsltUrl).then((r) => r.text())
+        ]);
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+        const xsltDoc = parser.parseFromString(xsltText, "application/xml");
+
+        const processor = new XSLTProcessor();
+        processor.importStylesheet(xsltDoc);
+
+        const resultDoc = processor.transformToDocument(xmlDoc);
+        const jsonText = new XMLSerializer().serializeToString(resultDoc);
+
+        const blob = new Blob([jsonText], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "events.json";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      button.addEventListener("click", async () => {
+        status.textContent = "Generuji…";
+        try {
+          await transformToJson();
+          status.textContent = "Hotovo: events.json";
+        } catch (error) {
+          status.textContent = "Chyba při generování.";
+        }
+      });
+    })();
+  </script></body>
 </html>
+
 
 
 
