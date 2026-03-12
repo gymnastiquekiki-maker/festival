@@ -9,13 +9,43 @@
         <xs:element name="events" type="EventsType"/>
       </xs:sequence>
     </xs:complexType>
+    <!-- Vlastní omezení: unikátnost ID v rámci kolekcí -->
+    <xs:unique name="uniqueVenueId">
+      <xs:selector xpath="venues/venue"/>
+      <xs:field xpath="@id"/>
+    </xs:unique>
+    <xs:unique name="uniquePerformerId">
+      <xs:selector xpath="performers/performer"/>
+      <xs:field xpath="@id"/>
+    </xs:unique>
+    <xs:unique name="uniqueEventId">
+      <xs:selector xpath="events/event"/>
+      <xs:field xpath="@id"/>
+    </xs:unique>
+    <!-- Vlastní omezení: referenční integrita eventů -->
+    <xs:key name="venueKey">
+      <xs:selector xpath="venues/venue"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="performerKey">
+      <xs:selector xpath="performers/performer"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:keyref name="eventVenueRef" refer="venueKey">
+      <xs:selector xpath="events/event"/>
+      <xs:field xpath="@venue_id"/>
+    </xs:keyref>
+    <xs:keyref name="eventPerformerRef" refer="performerKey">
+      <xs:selector xpath="events/event"/>
+      <xs:field xpath="@performer_id"/>
+    </xs:keyref>
   </xs:element>
 
   <xs:complexType name="InfoType">
     <xs:sequence>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element name="name" type="NonEmptyTextType"/>
       <xs:element name="edition" type="EditionType"/>
-      <xs:element name="location" type="xs:string"/>
+      <xs:element name="location" type="LocationType"/>
       <xs:element name="start_date" type="DateType"/>
       <xs:element name="end_date" type="DateType"/>
     </xs:sequence>
@@ -71,11 +101,9 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- Vlastní omezení: pattern pro datum YYYY-MM-DD -->
+  <!-- Vlastní omezení: typ data -->
   <xs:simpleType name="DateType">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="\d{4}-\d{2}-\d{2}"/>
-    </xs:restriction>
+    <xs:restriction base="xs:date"/>
   </xs:simpleType>
 
   <!-- Vlastní omezení: pattern pro čas HH:MM (24h) -->
@@ -85,24 +113,40 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- Vlastní omezení: ID lokace ve tvaru vN -->
+  <!-- Vlastní omezení: ID lokace ve tvaru vN (bez nuly) -->
   <xs:simpleType name="VenueIdType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="v\d+"/>
+      <xs:pattern value="v[1-9]\d*"/>
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- Vlastní omezení: ID interpreta ve tvaru pN -->
+  <!-- Vlastní omezení: ID interpreta ve tvaru pN (bez nuly) -->
   <xs:simpleType name="PerformerIdType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="p\d+"/>
+      <xs:pattern value="p[1-9]\d*"/>
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- Vlastní omezení: ID eventu ve tvaru eN -->
+  <!-- Vlastní omezení: ID eventu ve tvaru eN (bez nuly) -->
   <xs:simpleType name="EventIdType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="e\d+"/>
+      <xs:pattern value="e[1-9]\d*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: neprázdný text (bez vedoucích/koncových mezer) -->
+  <xs:simpleType name="NonEmptyTextType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:pattern value="\S(.*\S)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: délka lokace v rozmezí 5–120 znaků -->
+  <xs:simpleType name="LocationType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="120"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
