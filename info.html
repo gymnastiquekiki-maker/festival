@@ -119,18 +119,41 @@
         return;
       }
 
+      function buildUrl(relativePath) {
+        const basePath = window.location.pathname.replace(/[^/]+$/, "");
+        return new URL(relativePath, window.location.origin + basePath).toString();
+      }
+
+      function ensureParsed(doc, label) {
+        const parserError = doc.getElementsByTagName("parsererror")[0];
+        if (parserError) {
+          throw new Error(label + " parser error");
+        }
+      }
+
+      async function fetchText(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status + " for " + url);
+        }
+        return response.text();
+      }
+
       async function transformToJson() {
-        const xmlUrl = "/data/festival.xml";
-        const xsltUrl = "/data/xslt/festival-events.xslt";
+        const xmlUrl = buildUrl("data/festival.xml");
+        const xsltUrl = buildUrl("data/xslt/festival-events.xslt");
 
         const [xmlText, xsltText] = await Promise.all([
-          fetch(xmlUrl).then((r) => r.text()),
-          fetch(xsltUrl).then((r) => r.text())
+          fetchText(xmlUrl),
+          fetchText(xsltUrl)
         ]);
 
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlText, "application/xml");
         const xsltDoc = parser.parseFromString(xsltText, "application/xml");
+
+        ensureParsed(xmlDoc, "XML");
+        ensureParsed(xsltDoc, "XSLT");
 
         const processor = new XSLTProcessor();
         processor.importStylesheet(xsltDoc);
@@ -155,12 +178,14 @@
           await transformToJson();
           status.textContent = "Hotovo: events.json";
         } catch (error) {
-          status.textContent = "Chyba při generování.";
+          status.textContent = "Chyba: " + (error && error.message ? error.message : "neznámá");
         }
       });
     })();
   </script></body>
 </html>
+
+
 
 
 
