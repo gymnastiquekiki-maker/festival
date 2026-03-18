@@ -16,10 +16,10 @@ $map = @{
 }
 
 $settings = New-Object System.Xml.XmlWriterSettings
-$settings.Encoding = New-Object System.Text.UTF8Encoding($false)
 $settings.OmitXmlDeclaration = $true
 $settings.Indent = $false
 $settings.ConformanceLevel = [System.Xml.ConformanceLevel]::Fragment
+$utf8Bom = New-Object System.Text.UTF8Encoding($true)
 
 foreach ($xsltName in $map.Keys) {
   $xsltPath = Join-Path $xsltDir $xsltName
@@ -28,7 +28,9 @@ foreach ($xsltName in $map.Keys) {
   $transform = New-Object System.Xml.Xsl.XslCompiledTransform
   $transform.Load($xsltPath)
 
-  $writer = [System.Xml.XmlWriter]::Create($outPath, $settings)
+  $stringWriter = New-Object System.IO.StringWriter
+  $writer = [System.Xml.XmlWriter]::Create($stringWriter, $settings)
   $transform.Transform($xmlPath, $null, $writer)
   $writer.Close()
+  [System.IO.File]::WriteAllText($outPath, $stringWriter.ToString(), $utf8Bom)
 }
