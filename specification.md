@@ -1,26 +1,26 @@
-# Specifikace projektu: Techno festival "SUB-BASS PRAGUE 2026"
- 
+# Specifikace projektu: metalovy festival "Iron Forge Prague 2026"
+
 ## Identita festivalu
 
-- **Název:** Sub-Bass Prague
+- **Nazev:** Iron Forge Prague
+- **Rocnik:** 5. rocnik
+- **Lokalita:** Nakladove nadrazi Zizkov, Praha
+- **Datumovy rozsah:** 14. 08. 2026 - 16. 08. 2026 (3 dny)
 
-- **Ročník:** 5. ročník
+## Cilove publikum a charakter akce
 
-- **Lokalita:** Nákladové nádraží Žižkov, Praha
+Festival je zameren na fanousky tvrde kytarove hudby a metalove subkultury. Dramaturgie kombinuje klasicky heavy metal, thrash, death, black i symfonicky metal. Industrialni prostredi Nakladoveho nadrazi Zizkov podporuje syrovou atmosferu akce a dava prostor pro vyraznou scenografii, svetla i pyrotechnicke efekty.
 
-- **Datumový rozsah:** 14. 08. 2026 – 16. 08. 2026 (3 dny)
- 
-## Cílové publikum a charakter akce
-
-Festival je zaměřen na komunitu fanoušků undergroundové elektronické hudby se zaměřením na žánry **Techno, Industrial, Acid a Ambient**. Akce využívá syrovou estetiku opuštěného nádraží a propojuje hudební produkci s vizuálním uměním.
- 
 ## Struktura webu
 
-1. **Úvod (Landing page):** Historie festivalu a vize 5. ročníku.
+1. **Uvod (Landing page):** predstaveni festivalu, vizualni identita, zakladni informace a vstupenky.
+2. **Program:** tridenni harmonogram rozdeleny podle dnu a scen.
+3. **Ucinkujici:** seznam 60 interpretu a detailni medailony vybranych kapel.
+4. **Prakticke informace:** misto konani, doprava, bezpecnost, ubytovani a pravidla vstupu.
 
-2. **Program:** Interaktivní harmonogram rozdělený podle dnů a scén.
+## Obsahova osa projektu
 
-3. **Účinkující:** Seznam 60+ interpretů s profily a ukázkami tvorby.
-
-4. **Praktické informace:** Mapa areálu, doprava, bezpečnost a pravidla vstupu (18+).
- 
+- festival je koncipovany jako fiktivni metalova akce v Praze,
+- data jsou ulozena v XML a dale validovana pomoci XSD,
+- vybrane vystupy se transformuji do JSON pres XSLT,
+- webova prezentace vizualne odpovida metalovemu zamereni akce.
