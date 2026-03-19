@@ -220,16 +220,19 @@
     function pad(number) {
       return String(number).padStart(2, "0");
     }
-    function getEventDateTime(baseDate, timeText) {
-      var parts = timeText.split(":");
-      var hour = Number(parts[0]);
-      var minute = Number(parts[1]);
-      var date = new Date(baseDate + "T00:00:00");
-      if (hour < 12) {
-        date.setDate(date.getDate() + 1);
+    function parseDateTime(dateText, timeText) {
+      return new Date(dateText + "T" + timeText + ":00");
+    }
+    function getFestivalDay(dateTime) {
+      var festivalDay = new Date(dateTime.getTime());
+      if (dateTime.getHours() < 12) {
+        festivalDay.setDate(festivalDay.getDate() - 1);
       }
-      date.setHours(hour, minute, 0, 0);
-      return date;
+      return [
+        festivalDay.getFullYear(),
+        pad(festivalDay.getMonth() + 1),
+        pad(festivalDay.getDate())
+      ].join("-");
     }
     function formatDateTime(date) {
       return [
@@ -256,10 +259,14 @@
       var performers = mapById(Array.from(xml.querySelectorAll("performers > performer")));
       var venues = mapById(Array.from(xml.querySelectorAll("venues > venue")));
       var events = Array.from(xml.querySelectorAll("events > event")).map(function (e) {
+        var date = e.getAttribute("date");
+        var time = e.getAttribute("time");
+        var dateTime = parseDateTime(date, time);
         return {
-          date: e.getAttribute("date"),
-          time: e.getAttribute("time"),
-          dateTime: getEventDateTime(e.getAttribute("date"), e.getAttribute("time")),
+          date: date,
+          time: time,
+          dateTime: dateTime,
+          festivalDay: getFestivalDay(dateTime),
           performerId: e.getAttribute("performer_id"),
           venueId: e.getAttribute("venue_id")
         };
@@ -268,7 +275,7 @@
       var sections = Array.from(document.querySelectorAll("section[data-endpoint=\"festival.xml#events\"][data-date]"));
       sections.forEach(function (section) {
         var date = section.dataset.date;
-        var dayEvents = events.filter(function (ev) { return ev.date === date; });
+        var dayEvents = events.filter(function (ev) { return ev.festivalDay === date; });
         if (dayEvents.length === 0) {
           return;
         }
