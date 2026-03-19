@@ -1,11 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <festival>
     <info>
         <name>Iron Forge Prague</name>
         <edition>5</edition>
         <location>Nákladové nádraží Žižkov, Praha</location>
+        <description>Třídenní metalový festival v industriálním prostoru s důrazem na silný line-up, pyrotechniku a komunitní atmosféru.</description>
         <start_date>2026-08-14</start_date>
         <end_date>2026-08-16</end_date>
+        <tickets>
+            <ticket code="day" name="Jednodenní" price_czk="1290">Vstup na jeden vybraný den festivalu.</ticket>
+            <ticket code="full" name="Třídenní" price_czk="2990">Plný přístup na všechny scény po celou dobu akce.</ticket>
+            <ticket code="vip" name="VIP" price_czk="4990">VIP vstup, vyhrazená zóna a rychlejší odbavení.</ticket>
+        </tickets>
+        <links>
+            <link rel="homepage">index.html</link>
+            <link rel="program">program.html</link>
+            <link rel="performers">performers.html</link>
+            <link rel="practical_info">info.html</link>
+            <link rel="xml_source">festival.xml</link>
+        </links>
     </info>
 
     <venues>
@@ -85,18 +98,18 @@
         <event id="e6" venue_id="v2" performer_id="p18" date="2026-08-14" time="21:00" />
         <event id="e7" venue_id="v1" performer_id="p4" date="2026-08-14" time="22:30" />
         <event id="e8" venue_id="v2" performer_id="p19" date="2026-08-14" time="22:30" />
-        <event id="e9" venue_id="v1" performer_id="p5" date="2026-08-14" time="00:00" />
-        <event id="e10" venue_id="v2" performer_id="p20" date="2026-08-14" time="00:00" />
-        <event id="e11" venue_id="v1" performer_id="p6" date="2026-08-14" time="01:30" />
-        <event id="e12" venue_id="v2" performer_id="p21" date="2026-08-14" time="01:30" />
-        <event id="e13" venue_id="v1" performer_id="p41" date="2026-08-14" time="03:00" />
-        <event id="e14" venue_id="v2" performer_id="p22" date="2026-08-14" time="03:00" />
-        <event id="e15" venue_id="v1" performer_id="p42" date="2026-08-14" time="04:30" />
-        <event id="e16" venue_id="v2" performer_id="p31" date="2026-08-14" time="04:30" />
-        <event id="e17" venue_id="v1" performer_id="p43" date="2026-08-14" time="06:00" />
-        <event id="e18" venue_id="v2" performer_id="p32" date="2026-08-14" time="06:00" />
-        <event id="e19" venue_id="v1" performer_id="p44" date="2026-08-14" time="07:30" />
-        <event id="e20" venue_id="v2" performer_id="p33" date="2026-08-14" time="07:30" />
+        <event id="e9" venue_id="v1" performer_id="p5" date="2026-08-15" time="00:00" />
+        <event id="e10" venue_id="v2" performer_id="p20" date="2026-08-15" time="00:00" />
+        <event id="e11" venue_id="v1" performer_id="p6" date="2026-08-15" time="01:30" />
+        <event id="e12" venue_id="v2" performer_id="p21" date="2026-08-15" time="01:30" />
+        <event id="e13" venue_id="v1" performer_id="p41" date="2026-08-15" time="03:00" />
+        <event id="e14" venue_id="v2" performer_id="p22" date="2026-08-15" time="03:00" />
+        <event id="e15" venue_id="v1" performer_id="p42" date="2026-08-15" time="04:30" />
+        <event id="e16" venue_id="v2" performer_id="p31" date="2026-08-15" time="04:30" />
+        <event id="e17" venue_id="v1" performer_id="p43" date="2026-08-15" time="06:00" />
+        <event id="e18" venue_id="v2" performer_id="p32" date="2026-08-15" time="06:00" />
+        <event id="e19" venue_id="v1" performer_id="p44" date="2026-08-15" time="07:30" />
+        <event id="e20" venue_id="v2" performer_id="p33" date="2026-08-15" time="07:30" />
 
         <event id="e21" venue_id="v1" performer_id="p7" date="2026-08-15" time="18:00" />
         <event id="e22" venue_id="v2" performer_id="p23" date="2026-08-15" time="18:00" />
@@ -106,18 +119,18 @@
         <event id="e26" venue_id="v2" performer_id="p25" date="2026-08-15" time="21:00" />
         <event id="e27" venue_id="v1" performer_id="p10" date="2026-08-15" time="22:30" />
         <event id="e28" venue_id="v2" performer_id="p26" date="2026-08-15" time="22:30" />
-        <event id="e29" venue_id="v1" performer_id="p11" date="2026-08-15" time="00:00" />
-        <event id="e30" venue_id="v2" performer_id="p27" date="2026-08-15" time="00:00" />
-        <event id="e31" venue_id="v1" performer_id="p12" date="2026-08-15" time="01:30" />
-        <event id="e32" venue_id="v2" performer_id="p28" date="2026-08-15" time="01:30" />
-        <event id="e33" venue_id="v1" performer_id="p45" date="2026-08-15" time="03:00" />
-        <event id="e34" venue_id="v2" performer_id="p29" date="2026-08-15" time="03:00" />
-        <event id="e35" venue_id="v1" performer_id="p46" date="2026-08-15" time="04:30" />
-        <event id="e36" venue_id="v2" performer_id="p34" date="2026-08-15" time="04:30" />
-        <event id="e37" venue_id="v1" performer_id="p47" date="2026-08-15" time="06:00" />
-        <event id="e38" venue_id="v2" performer_id="p35" date="2026-08-15" time="06:00" />
-        <event id="e39" venue_id="v1" performer_id="p48" date="2026-08-15" time="07:30" />
-        <event id="e40" venue_id="v2" performer_id="p36" date="2026-08-15" time="07:30" />
+        <event id="e29" venue_id="v1" performer_id="p11" date="2026-08-16" time="00:00" />
+        <event id="e30" venue_id="v2" performer_id="p27" date="2026-08-16" time="00:00" />
+        <event id="e31" venue_id="v1" performer_id="p12" date="2026-08-16" time="01:30" />
+        <event id="e32" venue_id="v2" performer_id="p28" date="2026-08-16" time="01:30" />
+        <event id="e33" venue_id="v1" performer_id="p45" date="2026-08-16" time="03:00" />
+        <event id="e34" venue_id="v2" performer_id="p29" date="2026-08-16" time="03:00" />
+        <event id="e35" venue_id="v1" performer_id="p46" date="2026-08-16" time="04:30" />
+        <event id="e36" venue_id="v2" performer_id="p34" date="2026-08-16" time="04:30" />
+        <event id="e37" venue_id="v1" performer_id="p47" date="2026-08-16" time="06:00" />
+        <event id="e38" venue_id="v2" performer_id="p35" date="2026-08-16" time="06:00" />
+        <event id="e39" venue_id="v1" performer_id="p48" date="2026-08-16" time="07:30" />
+        <event id="e40" venue_id="v2" performer_id="p36" date="2026-08-16" time="07:30" />
 
         <event id="e41" venue_id="v1" performer_id="p56" date="2026-08-16" time="16:00" />
         <event id="e42" venue_id="v2" performer_id="p37" date="2026-08-16" time="16:00" />
@@ -131,13 +144,13 @@
         <event id="e50" venue_id="v2" performer_id="p30" date="2026-08-16" time="22:00" />
         <event id="e51" venue_id="v1" performer_id="p13" date="2026-08-16" time="23:30" />
         <event id="e52" venue_id="v2" performer_id="p49" date="2026-08-16" time="23:30" />
-        <event id="e53" venue_id="v1" performer_id="p14" date="2026-08-16" time="01:00" />
-        <event id="e54" venue_id="v2" performer_id="p50" date="2026-08-16" time="01:00" />
-        <event id="e55" venue_id="v1" performer_id="p15" date="2026-08-16" time="02:30" />
-        <event id="e56" venue_id="v2" performer_id="p51" date="2026-08-16" time="02:30" />
-        <event id="e57" venue_id="v1" performer_id="p52" date="2026-08-16" time="04:00" />
-        <event id="e58" venue_id="v2" performer_id="p53" date="2026-08-16" time="04:00" />
-        <event id="e59" venue_id="v1" performer_id="p54" date="2026-08-16" time="05:30" />
-        <event id="e60" venue_id="v2" performer_id="p55" date="2026-08-16" time="05:30" />
+        <event id="e53" venue_id="v1" performer_id="p14" date="2026-08-17" time="01:00" />
+        <event id="e54" venue_id="v2" performer_id="p50" date="2026-08-17" time="01:00" />
+        <event id="e55" venue_id="v1" performer_id="p15" date="2026-08-17" time="02:30" />
+        <event id="e56" venue_id="v2" performer_id="p51" date="2026-08-17" time="02:30" />
+        <event id="e57" venue_id="v1" performer_id="p52" date="2026-08-17" time="04:00" />
+        <event id="e58" venue_id="v2" performer_id="p53" date="2026-08-17" time="04:00" />
+        <event id="e59" venue_id="v1" performer_id="p54" date="2026-08-17" time="05:30" />
+        <event id="e60" venue_id="v2" performer_id="p55" date="2026-08-17" time="05:30" />
     </events>
 </festival>

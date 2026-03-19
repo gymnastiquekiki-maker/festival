@@ -46,9 +46,42 @@
       <xs:element name="name" type="NonEmptyTextType"/>
       <xs:element name="edition" type="EditionType"/>
       <xs:element name="location" type="LocationType"/>
+      <xs:element name="description" type="DescriptionType"/>
       <xs:element name="start_date" type="DateType"/>
       <xs:element name="end_date" type="DateType"/>
+      <xs:element name="tickets" type="TicketsType"/>
+      <xs:element name="links" type="LinksType"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TicketsType">
+    <xs:sequence>
+      <xs:element name="ticket" type="TicketType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TicketType">
+    <xs:simpleContent>
+      <xs:extension base="DescriptionType">
+        <xs:attribute name="code" type="TicketCodeType" use="required"/>
+        <xs:attribute name="name" type="NonEmptyTextType" use="required"/>
+        <xs:attribute name="price_czk" type="TicketPriceType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LinksType">
+    <xs:sequence>
+      <xs:element name="link" type="LinkType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LinkType">
+    <xs:simpleContent>
+      <xs:extension base="RelativeLinkType">
+        <xs:attribute name="rel" type="LinkRelType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="VenuesType">
@@ -106,6 +139,14 @@
     <xs:restriction base="xs:date"/>
   </xs:simpleType>
 
+  <!-- Vlastní omezení: delší textový popis v rozmezí 20–300 znaků -->
+  <xs:simpleType name="DescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="20"/>
+      <xs:maxLength value="300"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- Vlastní omezení: pattern pro čas HH:MM (24h) -->
   <xs:simpleType name="TimeType">
     <xs:restriction base="xs:string">
@@ -134,6 +175,23 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <!-- Vlastní omezení: enumerace typů vstupenek -->
+  <xs:simpleType name="TicketCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="day"/>
+      <xs:enumeration value="full"/>
+      <xs:enumeration value="vip"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: cena vstupenky v Kč v rozmezí 100–99999 -->
+  <xs:simpleType name="TicketPriceType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="100"/>
+      <xs:maxInclusive value="99999"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- Vlastní omezení: neprázdný text (bez vedoucích/koncových mezer) -->
   <xs:simpleType name="NonEmptyTextType">
     <xs:restriction base="xs:string">
@@ -147,6 +205,24 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="5"/>
       <xs:maxLength value="120"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: povolené relace interních odkazů -->
+  <xs:simpleType name="LinkRelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="homepage"/>
+      <xs:enumeration value="program"/>
+      <xs:enumeration value="performers"/>
+      <xs:enumeration value="practical_info"/>
+      <xs:enumeration value="xml_source"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Vlastní omezení: relativní odkaz na lokální HTML/XML soubor -->
+  <xs:simpleType name="RelativeLinkType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z0-9._/\-]+(\.html|\.xml)"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

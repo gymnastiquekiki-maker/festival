@@ -4,8 +4,9 @@
   <xsl:template match="/">
     <xsl:apply-templates select="/festival/events"/>
   </xsl:template>
-  <xsl:template match="/festival/events">[
-<xsl:for-each select='event'>  {
+  <xsl:template match="/festival/events">{
+  "items": [
+<xsl:for-each select='event'>    {
     "id": "<xsl:value-of select='@id'/>",
     "venue_id": "<xsl:value-of select='@venue_id'/>",
     "performer_id": "<xsl:value-of select='@performer_id'/>",
@@ -13,5 +14,15 @@
     "time": "<xsl:value-of select='@time'/>"
   }<xsl:if test='position() != last()'>,</xsl:if>
 </xsl:for-each>
-]</xsl:template>
+  ],
+  "page": 1,
+  "pageSize": <xsl:value-of select='count(event)'/>,
+  "totalItems": <xsl:value-of select='count(event)'/>,
+  "totalPages": 1,
+  "filters": {
+    "day": null,
+    "venueId": null,
+    "performerId": null
+  }
+}</xsl:template>
 </xsl:stylesheet>

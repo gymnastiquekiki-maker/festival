@@ -4,8 +4,21 @@
         <name>Iron Forge Prague</name>
         <edition>5</edition>
         <location>Nákladové nádraží Žižkov, Praha</location>
+        <description>Třídenní metalový festival v industriálním prostoru s důrazem na silný line-up, pyrotechniku a komunitní atmosféru.</description>
         <start_date>2026-08-14</start_date>
         <end_date>2026-08-16</end_date>
+        <tickets>
+            <ticket code="day" name="Jednodenní" price_czk="1290">Vstup na jeden vybraný den festivalu.</ticket>
+            <ticket code="full" name="Třídenní" price_czk="2990">Plný přístup na všechny scény po celou dobu akce.</ticket>
+            <ticket code="vip" name="VIP" price_czk="4990">VIP vstup, vyhrazená zóna a rychlejší odbavení.</ticket>
+        </tickets>
+        <links>
+            <link rel="homepage">index.html</link>
+            <link rel="program">program.html</link>
+            <link rel="performers">performers.html</link>
+            <link rel="practical_info">info.html</link>
+            <link rel="xml_source">festival.xml</link>
+        </links>
     </info>
 
     <venues>

@@ -79,7 +79,7 @@ Lokální fonty použité v CSS.
 ## 5) Složka `data/` – datová základna
 
 ### `data/festival.xml`
-Kopie hlavního XML (datový zdroj).
+Kopie hlavního XML (datový zdroj). XML bylo rozšířeno o `description`, `tickets` a `links`, aby šlo přímo generovat data pro endpoint `GET /api/festival`.
 
 ### `data/festival.xsd`
 XSD schéma pro validaci XML. Obsahuje vlastní omezení s komentáři:
@@ -88,21 +88,27 @@ XSD schéma pro validaci XML. Obsahuje vlastní omezení s komentáři:
 - rozsah ročníku (1–99).
 
 ### `data/xslt/`
-Sada XSLT transformací, každá generuje JSON pro jeden endpoint:
-- `festival-info.xslt` → `info.json`
+Sada XSLT transformací, které generují JSON pro list i detail endpointy:
+- `festival-info.xslt` → `festival.json`
 - `festival-venues.xslt` → `venues.json`
 - `festival-performers.xslt` → `performers.json`
 - `festival-events.xslt` → `events.json`
+- `festival-venue-detail.xslt` → `venues/{id}.json`
+- `festival-performer-detail.xslt` → `performers/{id}.json`
+- `festival-event-detail.xslt` → `events/{id}.json`
 
 ### `data/json/`
 Vygenerované JSON výstupy odpovídající API datům:
-- `info.json`
+- `festival.json`
 - `venues.json`
+- `venues/{id}.json`
 - `performers.json`
+- `performers/{id}.json`
 - `events.json`
+- `events/{id}.json`
 
 ### `data/transform.ps1`
-Skript pro spuštění XML → XSLT → JSON transformací. Po spuštění vygeneruje JSON soubory do `data/json/`.
+Skript pro spuštění XML → XSLT → JSON transformací. Po spuštění vygeneruje list i detail JSON soubory do `data/json/`.
 
 ### `data/README.md`
 Krátké instrukce k datové části a transformacím.
@@ -189,7 +195,7 @@ Dalším krokem byla úprava metadat ve všech HTML souborech. Do `<head>` jsme 
 - Twitter card pro náhledy na sociálních sítích,
 - JSON‑LD (schema.org) pro festival a eventy, aby byla data strojově čitelná.
 
-Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali `festival.xml` jako hlavní datový zdroj a vytvořili `festival.xsd` pro validaci (včetně vlastních omezení typu pattern/rozsah). Přidali jsme XSLT šablony do `data/xslt/`, které převádějí XML na JSON, a vygenerovali výstupy do `data/json/`. Spuštění transformace zajišťuje skript `data/transform.ps1`.
+Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali `festival.xml` jako hlavní datový zdroj a vytvořili `festival.xsd` pro validaci (včetně vlastních omezení typu pattern/rozsah). Přidali jsme XSLT šablony do `data/xslt/`, které převádějí XML na JSON, a vygenerovali výstupy do `data/json/`. Později jsme XML rozšířili o popis festivalu, vstupenky a odkazy, aby OpenAPI specifikace i endpoint `GET /api/festival` odpovídaly skutečným datům. Spuštění transformace zajišťuje skript `data/transform.ps1`.
 
 Další krok byl doplnění napojení na API. V HTML jsme zanechali odkaz na XML endpoint a do `program.html` jsme přidali načítání `festival.xml` pomocí `fetch`, aby se program mohl generovat z dat. Tím se zajistilo, že obsah stránky odpovídá datům v XML a změny v `festival.xml` se mohou promítnout do programu.
 
@@ -225,7 +231,16 @@ Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali
 - Aktualizováno `data/festival.xsd`: přidána unikátnost ID, referenční integrita (`key`/`keyref`), zpřesněné typy (date, time, patterny), nové typy `NonEmptyTextType` a `LocationType`.
 - Opraveny XSLT šablony v `data/xslt/` (správné uvozovky v XPath) a znovu spuštěna transformace XML → JSON.
 - Ověřena validace `data/festival.xml` proti `data/festival.xsd`.
-- Vytvořena OpenAPI 3.1 specifikace v `openapi.yaml`.\n## 9) Ověření požadavků
+- Vytvořena OpenAPI 3.1 specifikace v `openapi.yaml`.
+
+### 2026-03-19
+- Rozšířeno `festival.xml` o `description`, `tickets` a `links`, aby datový model pokryl požadavky endpointu `GET /api/festival`.
+- Rozšířeno `data/festival.xsd` o nové typy a omezení pro popis, vstupenky a interní odkazy.
+- Upraven `data/transform.ps1`, aby generoval `festival.json` a detail JSON soubory pro `venues/{id}`, `performers/{id}` a `events/{id}`.
+- Doplněny nové XSLT šablony pro detail endpointy a upraven `events.json` na list response s filtry a stránkováním.
+- Přepsána OpenAPI specifikace na REST endpointy `/api/festival`, `/api/venues`, `/api/performers` a `/api/events` včetně detailů, filtrů a HTTP kódů.
+
+## 9) Ověření požadavků
 
 ### Ověření: výchozí datová základna `festival.xml`
 - well‑formed XML: soubor se načte bez chyby XML parserem.
@@ -460,19 +475,25 @@ festival-info.xslt
 festival-venues.xslt
 festival-performers.xslt
 festival-events.xslt
+festival-venue-detail.xslt
+festival-performer-detail.xslt
+festival-event-detail.xslt
 ```
 
 Důkaz (JSON výstupy):
 ```
-info.json
+festival.json
 venues.json
 performers.json
 events.json
+venues/{id}.json
+performers/{id}.json
+events/{id}.json
 ```
 
 Důkaz (mapování v transform.ps1):
 ```
-"festival-info.xslt" = "info.json"
+"festival-info.xslt" = "festival.json"
 "festival-venues.xslt" = "venues.json"
 "festival-performers.xslt" = "performers.json"
 "festival-events.xslt" = "events.json"
