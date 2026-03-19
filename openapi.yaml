@@ -27,7 +27,7 @@ paths:
               example:
                 name: Iron Forge Prague
                 edition: 5
-                location: Nákladové nádraží Žižkov, Praha
+                location: Nakladove nadrazi Zizkov, Praha
                 start_date: '2026-08-14'
                 end_date: '2026-08-16'
         '400':

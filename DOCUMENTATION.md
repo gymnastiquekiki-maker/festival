@@ -234,6 +234,7 @@ Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali
 - min. 60 účinkujících: 60 performers.
 - min. 60 programových položek: 60 events.
 - minimální entity: `<festival>`, `<venues>`, `<performers>`, `<events>`.
+- Poznámka k programu: část nočních vystoupení posledního festivalového dne pokračuje po půlnoci do `2026-08-17`, ale stále patří ke 3. festivalovému dni v rámci rozsahu `2026-08-14` až `2026-08-16`.
 
 Důkaz (počty a dny):
 ```

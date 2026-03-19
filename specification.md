@@ -24,3 +24,7 @@ Festival je zameren na fanousky tvrde kytarove hudby a metalove subkultury. Dram
 - data jsou ulozena v XML a dale validovana pomoci XSD,
 - vybrane vystupy se transformuji do JSON pres XSLT,
 - webova prezentace vizualne odpovida metalovemu zamereni akce.
+
+## Poznamka k datumum programu
+
+Festival je definovan jako tridenni akce v rozsahu 14. 08. 2026 az 16. 08. 2026. Cast vecerniho programu posledniho festivaloveho dne zamerne pokracuje po pulnoci do kalendarniho data 17. 08. 2026, ale dramaturgicky stale patri ke 3. festivalovemu dni.
