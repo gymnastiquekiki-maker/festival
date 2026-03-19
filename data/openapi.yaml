@@ -1,23 +1,22 @@
 openapi: 3.1.0
 info:
   title: Iron Forge Prague API
-  version: 1.1.0
-  summary: REST API pro data festivalu Iron Forge Prague 2026
+  version: 1.2.0
+  summary: Staticke JSON endpointy pro data festivalu Iron Forge Prague 2026
   description: >-
-    API vraci JSON vystupy generovane z XML zdroje `data/festival.xml` pomoci
-    XSLT transformaci. Schematy odpovidaji souborum v `data/json/`.
+    API popisuje skutecne JSON vystupy generovane z XML zdroje
+    `data/festival.xml` pomoci XSLT transformaci. Jednotlive endpointy
+    odpovidaji souborum v `data/json/`.
 servers:
   - url: https://example.com/api
     description: Produkcni API
   - url: http://localhost:8000/data/json
     description: Lokalni staticke JSON vystupy projektu
 paths:
-  /info:
+  /info.json:
     get:
-      summary: Zakladni informace o festivalu
+      summary: Zakladni informace o festivalu ve formatu JSON
       description: Vrati jeden objekt se zakladnimi informacemi o festivalu.
-      parameters:
-        - $ref: '#/components/parameters/ResponseFormat'
       responses:
         '200':
           description: Uspech
@@ -35,13 +34,10 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '404':
           $ref: '#/components/responses/NotFound'
-  /venues:
+  /venues.json:
     get:
-      summary: Seznam scen
-      description: Vrati vsechny sceny nebo filtr podle identifikatoru.
-      parameters:
-        - $ref: '#/components/parameters/VenueIdQuery'
-        - $ref: '#/components/parameters/LimitQuery'
+      summary: Seznam scen ve formatu JSON
+      description: Vrati vsechny sceny jako JSON pole.
       responses:
         '200':
           description: Uspech
@@ -60,33 +56,10 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '404':
           $ref: '#/components/responses/NotFound'
-  /venues/{venueId}:
+  /performers.json:
     get:
-      summary: Detail sceny
-      description: Vrati jednu scenu podle identifikatoru.
-      parameters:
-        - $ref: '#/components/parameters/VenueIdPath'
-      responses:
-        '200':
-          description: Uspech
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Venue'
-              example:
-                id: v1
-                name: Steel Stage
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /performers:
-    get:
-      summary: Seznam interpretu
-      description: Vrati vsechny interprety nebo filtrovany vyber podle ID.
-      parameters:
-        - $ref: '#/components/parameters/PerformerIdQuery'
-        - $ref: '#/components/parameters/LimitQuery'
+      summary: Seznam interpretu ve formatu JSON
+      description: Vrati vsechny interprety jako JSON pole.
       responses:
         '200':
           description: Uspech
@@ -105,37 +78,10 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '404':
           $ref: '#/components/responses/NotFound'
-  /performers/{performerId}:
+  /events.json:
     get:
-      summary: Detail interpreta
-      description: Vrati jednoho interpreta podle identifikatoru.
-      parameters:
-        - $ref: '#/components/parameters/PerformerIdPath'
-      responses:
-        '200':
-          description: Uspech
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Performer'
-              example:
-                id: p1
-                name: Metallica
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /events:
-    get:
-      summary: Program festivalu
-      description: >-
-        Vrati seznam programu. Podporuje filtrovani podle data, sceny nebo
-        interpreta.
-      parameters:
-        - $ref: '#/components/parameters/EventDateQuery'
-        - $ref: '#/components/parameters/VenueIdQuery'
-        - $ref: '#/components/parameters/PerformerIdQuery'
-        - $ref: '#/components/parameters/LimitQuery'
+      summary: Program festivalu ve formatu JSON
+      description: Vrati program festivalu jako JSON pole.
       responses:
         '200':
           description: Uspech
@@ -160,107 +106,17 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '404':
           $ref: '#/components/responses/NotFound'
-  /events/{eventId}:
-    get:
-      summary: Detail programove polozky
-      description: Vrati jednu programovou polozku podle identifikatoru.
-      parameters:
-        - $ref: '#/components/parameters/EventIdPath'
-      responses:
-        '200':
-          description: Uspech
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Event'
-              example:
-                id: e1
-                venue_id: v1
-                performer_id: p1
-                date: '2026-08-14'
-                time: '18:00'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '404':
-          $ref: '#/components/responses/NotFound'
 components:
-  parameters:
-    ResponseFormat:
-      name: format
-      in: query
-      required: false
-      description: Podporovany format odpovedi.
-      schema:
-        type: string
-        enum: [json]
-        default: json
-    LimitQuery:
-      name: limit
-      in: query
-      required: false
-      description: Maximalni pocet vracenych zaznamu.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-    VenueIdQuery:
-      name: venue_id
-      in: query
-      required: false
-      description: Filtr podle ID sceny.
-      schema:
-        type: string
-        pattern: '^v[1-9]\d*$'
-    PerformerIdQuery:
-      name: performer_id
-      in: query
-      required: false
-      description: Filtr podle ID interpreta.
-      schema:
-        type: string
-        pattern: '^p[1-9]\d*$'
-    EventDateQuery:
-      name: date
-      in: query
-      required: false
-      description: Filtr podle data festivalu.
-      schema:
-        type: string
-        format: date
-    VenueIdPath:
-      name: venueId
-      in: path
-      required: true
-      description: Jedinecne ID sceny.
-      schema:
-        type: string
-        pattern: '^v[1-9]\d*$'
-    PerformerIdPath:
-      name: performerId
-      in: path
-      required: true
-      description: Jedinecne ID interpreta.
-      schema:
-        type: string
-        pattern: '^p[1-9]\d*$'
-    EventIdPath:
-      name: eventId
-      in: path
-      required: true
-      description: Jedinecne ID programove polozky.
-      schema:
-        type: string
-        pattern: '^e[1-9]\d*$'
   responses:
     BadRequest:
-      description: Neplatny parametr pozadavku.
+      description: Neplatny pozadavek.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
           example:
             error: bad_request
-            message: Parametr performer_id ma neplatny format.
+            message: Pozadavek nelze zpracovat.
             status: 400
     NotFound:
       description: Pozadovany zdroj nebyl nalezen.

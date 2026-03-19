@@ -51,73 +51,73 @@
     "id": "e9",
     "venue_id": "v1",
     "performer_id": "p5",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "00:00"
   },  {
     "id": "e10",
     "venue_id": "v2",
     "performer_id": "p20",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "00:00"
   },  {
     "id": "e11",
     "venue_id": "v1",
     "performer_id": "p6",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "01:30"
   },  {
     "id": "e12",
     "venue_id": "v2",
     "performer_id": "p21",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "01:30"
   },  {
     "id": "e13",
     "venue_id": "v1",
     "performer_id": "p41",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "03:00"
   },  {
     "id": "e14",
     "venue_id": "v2",
     "performer_id": "p22",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "03:00"
   },  {
     "id": "e15",
     "venue_id": "v1",
     "performer_id": "p42",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "04:30"
   },  {
     "id": "e16",
     "venue_id": "v2",
     "performer_id": "p31",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "04:30"
   },  {
     "id": "e17",
     "venue_id": "v1",
     "performer_id": "p43",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "06:00"
   },  {
     "id": "e18",
     "venue_id": "v2",
     "performer_id": "p32",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "06:00"
   },  {
     "id": "e19",
     "venue_id": "v1",
     "performer_id": "p44",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "07:30"
   },  {
     "id": "e20",
     "venue_id": "v2",
     "performer_id": "p33",
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "time": "07:30"
   },  {
     "id": "e21",
@@ -171,73 +171,73 @@
     "id": "e29",
     "venue_id": "v1",
     "performer_id": "p11",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "00:00"
   },  {
     "id": "e30",
     "venue_id": "v2",
     "performer_id": "p27",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "00:00"
   },  {
     "id": "e31",
     "venue_id": "v1",
     "performer_id": "p12",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "01:30"
   },  {
     "id": "e32",
     "venue_id": "v2",
     "performer_id": "p28",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "01:30"
   },  {
     "id": "e33",
     "venue_id": "v1",
     "performer_id": "p45",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "03:00"
   },  {
     "id": "e34",
     "venue_id": "v2",
     "performer_id": "p29",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "03:00"
   },  {
     "id": "e35",
     "venue_id": "v1",
     "performer_id": "p46",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "04:30"
   },  {
     "id": "e36",
     "venue_id": "v2",
     "performer_id": "p34",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "04:30"
   },  {
     "id": "e37",
     "venue_id": "v1",
     "performer_id": "p47",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "06:00"
   },  {
     "id": "e38",
     "venue_id": "v2",
     "performer_id": "p35",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "06:00"
   },  {
     "id": "e39",
     "venue_id": "v1",
     "performer_id": "p48",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "07:30"
   },  {
     "id": "e40",
     "venue_id": "v2",
     "performer_id": "p36",
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "time": "07:30"
   },  {
     "id": "e41",
@@ -315,49 +315,49 @@
     "id": "e53",
     "venue_id": "v1",
     "performer_id": "p14",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "01:00"
   },  {
     "id": "e54",
     "venue_id": "v2",
     "performer_id": "p50",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "01:00"
   },  {
     "id": "e55",
     "venue_id": "v1",
     "performer_id": "p15",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "02:30"
   },  {
     "id": "e56",
     "venue_id": "v2",
     "performer_id": "p51",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "02:30"
   },  {
     "id": "e57",
     "venue_id": "v1",
     "performer_id": "p52",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "04:00"
   },  {
     "id": "e58",
     "venue_id": "v2",
     "performer_id": "p53",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "04:00"
   },  {
     "id": "e59",
     "venue_id": "v1",
     "performer_id": "p54",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "05:30"
   },  {
     "id": "e60",
     "venue_id": "v2",
     "performer_id": "p55",
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "time": "05:30"
   }
 ]
