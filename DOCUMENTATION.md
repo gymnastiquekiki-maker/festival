@@ -457,7 +457,7 @@ section,article,aside{ ... border ... padding ... }
 - `data/festival.xml` existuje.
 - `data/festival.xsd` obsahuje vlastní omezení s komentáři.
 - XSLT → JSON transformace je funkční a spustitelná (`data/transform.ps1`).
-- Výstupy JSON odpovídají API (info, venues, performers, events).
+- Výstupy JSON odpovídají API (`festival`, `venues`, `performers`, `events` + detail endpointy).
 
 Důkaz (XSD omezení + komentáře):
 ```
@@ -465,8 +465,13 @@ Důkaz (XSD omezení + komentáře):
 <xs:minInclusive value="1"/>
 <xs:maxInclusive value="99"/>
 
-<!-- Vlastní omezení: pattern pro datum YYYY-MM-DD -->
-<xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+<!-- Vlastní omezení: typ data -->
+<xs:restriction base="xs:date"/>
+
+<!-- Vlastní omezení: enumerace typů vstupenek -->
+<xs:enumeration value="day"/>
+<xs:enumeration value="full"/>
+<xs:enumeration value="vip"/>
 ```
 
 Důkaz (XSLT soubory):
