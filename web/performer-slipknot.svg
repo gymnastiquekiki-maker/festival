@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Slipknot</title>
+  <desc id="desc">Original artwork inspired by masks, industrial chaos, and percussive impact.</desc>
+  <rect width="1200" height="700" fill="#141414"/>
+  <circle cx="960" cy="120" r="140" fill="#c81d25" opacity=".18"/>
+  <path d="M0 545L210 470L390 515L610 440L825 500L1200 420V700H0Z" fill="#080808"/>
+  <g fill="#e6e6e6">
+    <path d="M600 185C500 185 435 250 435 340C435 420 500 485 600 485C700 485 765 420 765 340C765 250 700 185 600 185Z"/>
+    <circle cx="540" cy="330" r="34" fill="#101010"/>
+    <circle cx="660" cy="330" r="34" fill="#101010"/>
+    <path d="M535 405C570 382 630 382 665 405" stroke="#101010" stroke-width="18" fill="none" stroke-linecap="round"/>
+  </g>
+  <g stroke="#c81d25" stroke-width="10" opacity=".8">
+    <line x1="455" y1="240" x2="745" y2="445"/>
+    <line x1="745" y1="240" x2="455" y2="445"/>
+  </g>
+  <text x="80" y="600" fill="#f5f5f5" font-size="94" font-family="Trebuchet MS, Verdana, sans-serif" font-weight="700" letter-spacing="6">SLIPKNOT</text>
+  <text x="84" y="648" fill="#d9a7a9" font-size="29" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3">Masked chaos, industrial pressure, percussive force</text>
+</svg>

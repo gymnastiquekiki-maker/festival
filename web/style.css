@@ -39,6 +39,7 @@ section,article,aside{
   display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space);align-items:center;
 }
 .hero-media img{width:100%;border-radius:var(--radius);display:block;}
+.venue-visual{width:100%;height:220px;object-fit:cover;margin:0 0 1rem 0;border:1px solid rgba(255,255,255,.08);}
 
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;}
 .gallery img{height:120px;object-fit:cover;}

@@ -93,13 +93,14 @@
         <h2>Harmonogram tří dnů</h2>
         <p>Dvě scény, 60 vystoupení a noční závěr s ohnivou show.</p></div>
       <div class="hero-media">
-        <img src="web/Black-Metal-Logos-4.jpg" alt="Vizuál programu festivalu Iron Forge Prague">
+        <img src="web/venue-steel-stage.svg" alt="Ilustrace hlavní festivalové scény Steel Stage">
       </div>
     </section>
 
     <section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14">
       <h2>Pátek 14. 8. 2026</h2>
       <article>
+        <img class="venue-visual" src="web/venue-steel-stage.svg" alt="Ilustrace místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-14T18:00">18:00</time> Metallica</li>
@@ -115,6 +116,7 @@
         </ul>
       </article>
       <article>
+        <img class="venue-visual" src="web/venue-pyro-hall.svg" alt="Ilustrace místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-14T18:00">18:00</time> Rammstein</li>
@@ -134,6 +136,7 @@
     <section id="day-2" data-endpoint="festival.xml#events" data-date="2026-08-15">
       <h2>Sobota 15. 8. 2026</h2>
       <article>
+        <img class="venue-visual" src="web/venue-steel-stage.svg" alt="Ilustrace místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-15T18:00">18:00</time> Judas Priest</li>
@@ -149,6 +152,7 @@
         </ul>
       </article>
       <article>
+        <img class="venue-visual" src="web/venue-pyro-hall.svg" alt="Ilustrace místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-15T18:00">18:00</time> Korn</li>
@@ -168,6 +172,7 @@
     <section id="day-3" data-endpoint="festival.xml#events" data-date="2026-08-16">
       <h2>Neděle 16. 8. 2026</h2>
       <article>
+        <img class="venue-visual" src="web/venue-steel-stage.svg" alt="Ilustrace místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-16T16:00">16:00</time> Motörhead</li>
@@ -183,6 +188,7 @@
         </ul>
       </article>
       <article>
+        <img class="venue-visual" src="web/venue-pyro-hall.svg" alt="Ilustrace místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-16T16:00">16:00</time> Death</li>
@@ -207,6 +213,10 @@
   <script>
   (function () {
     var url = "festival.xml";
+    var venueImages = {
+      "Steel Stage": { src: "web/venue-steel-stage.svg", alt: "Ilustrace místa Steel Stage" },
+      "Pyro Hall": { src: "web/venue-pyro-hall.svg", alt: "Ilustrace místa Pyro Hall" }
+    };
     function parseXml(text) {
       var xml = new DOMParser().parseFromString(text, "application/xml");
       if (xml.querySelector("parsererror")) {
@@ -263,6 +273,15 @@
 
         byVenue.forEach(function (list, venueName) {
           var article = document.createElement("article");
+          var imageConfig = venueImages[venueName];
+          if (imageConfig) {
+            var img = document.createElement("img");
+            img.className = "venue-visual";
+            img.src = imageConfig.src;
+            img.alt = imageConfig.alt;
+            img.loading = "lazy";
+            article.appendChild(img);
+          }
           var h3 = document.createElement("h3");
           h3.textContent = venueName;
           article.appendChild(h3);
