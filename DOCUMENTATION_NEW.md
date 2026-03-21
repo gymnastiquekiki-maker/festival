@@ -3,9 +3,9 @@
 **Název projektu:** Iron Forge Prague 2026  
 **Předmět:** Značkovací jazyky  
 **Typ projektu:** Webová prezentace festivalu s datovou vrstvou XML, XSD, XSLT, JSON a OpenAPI  
-**Místo řešení v repozitáři:** [web](web), [data](data), [7xAPI transformace](7xAPI/transformation/festival-info.xslt), [7xAPI JSON](7xAPI/json/festival.json), [API](API/openapi.yaml)  
-**Hlavní dokumentace projektu:** [původní dokumentace](DOCUMENTATION.md)  
-**Nová dokumentace:** [DOCUMENTATION_NEW.md](DOCUMENTATION_NEW.md)  
+**Místo řešení v repozitáři:** [web](https://github.com/gymnastiquekiki-maker/festival/tree/main/web), [data](https://github.com/gymnastiquekiki-maker/festival/tree/main/data), [7xAPI transformace](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/transformation/festival-info.xslt), [7xAPI JSON](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/json/festival.json), [API](https://github.com/gymnastiquekiki-maker/festival/blob/main/API/openapi.yaml)  
+**Hlavní dokumentace projektu:** [původní dokumentace](https://github.com/gymnastiquekiki-maker/festival/blob/main/DOCUMENTATION.md)  
+**Nová dokumentace:** [DOCUMENTATION_NEW.md](https://github.com/gymnastiquekiki-maker/festival/blob/main/DOCUMENTATION_NEW.md)  
 **Datum:** 21. 3. 2026
 
 ---
@@ -36,34 +36,34 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 
 | Oblast | Umístění |
 |---|---|
-| Původní dokumentace | [DOCUMENTATION.md](DOCUMENTATION.md) |
-| Nová dokumentace | [DOCUMENTATION_NEW.md](DOCUMENTATION_NEW.md) |
-| Hlavní XML zdroj | [data/festival.xml](data/festival.xml) |
-| XSD validace | [data/festival.xsd](data/festival.xsd) |
-| OpenAPI specifikace | [API/openapi.yaml](API/openapi.yaml) |
-| XSLT transformace | [7xAPI/transformation/festival-info.xslt](7xAPI/transformation/festival-info.xslt) |
-| JSON výstupy | [7xAPI/json/festival.json](7xAPI/json/festival.json) |
-| Finální web pro odevzdání | [web](web) |
+| Původní dokumentace | [DOCUMENTATION.md](https://github.com/gymnastiquekiki-maker/festival/blob/main/DOCUMENTATION.md) |
+| Nová dokumentace | [DOCUMENTATION_NEW.md](https://github.com/gymnastiquekiki-maker/festival/blob/main/DOCUMENTATION_NEW.md) |
+| Hlavní XML zdroj | [data/festival.xml](https://github.com/gymnastiquekiki-maker/festival/blob/main/data/festival.xml) |
+| XSD validace | [data/festival.xsd](https://github.com/gymnastiquekiki-maker/festival/blob/main/data/festival.xsd) |
+| OpenAPI specifikace | [API/openapi.yaml](https://github.com/gymnastiquekiki-maker/festival/blob/main/API/openapi.yaml) |
+| XSLT transformace | [7xAPI/transformation/festival-info.xslt](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/transformation/festival-info.xslt) |
+| JSON výstupy | [7xAPI/json/festival.json](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/json/festival.json) |
+| Finální web pro odevzdání | [web](https://github.com/gymnastiquekiki-maker/festival/tree/main/web) |
 
 # 3. Seznam všech požadavků v tabulce
 
 | Požadavek | Stav | Řešení |
 |---|---|---|
-| Titulní stránka webu | Splněno | [web/index.html](web/index.html) |
-| Stránka s programem | Splněno | [web/program.html](web/program.html) |
-| Stránka s účinkujícími | Splněno | [web/performers.html](web/performers.html) |
-| Stránka s praktickými informacemi | Splněno | [web/info.html](web/info.html) |
-| Sémantické HTML elementy (`header`, `nav`, `main`, `section`, `article`, `footer`) | Splněno | Použito napříč HTML stránkami ve složce [web](web) |
+| Titulní stránka webu | Splněno | [web/index.html](https://github.com/gymnastiquekiki-maker/festival/blob/main/web/index.html) |
+| Stránka s programem | Splněno | [web/program.html](https://github.com/gymnastiquekiki-maker/festival/blob/main/web/program.html) |
+| Stránka s účinkujícími | Splněno | [web/performers.html](https://github.com/gymnastiquekiki-maker/festival/blob/main/web/performers.html) |
+| Stránka s praktickými informacemi | Splněno | [web/info.html](https://github.com/gymnastiquekiki-maker/festival/blob/main/web/info.html) |
+| Sémantické HTML elementy (`header`, `nav`, `main`, `section`, `article`, `footer`) | Splněno | Použito napříč HTML stránkami ve složce [web](https://github.com/gymnastiquekiki-maker/festival/tree/main/web) |
 | Povinné HTML prvky (`head`, `meta`, `title`, `p`, `a`, `img`, `h1`, `h2`, `h3`, `aside`, `address`, `time`, `ul/ol`, `li`) | Splněno | Implementováno v `index.html`, `program.html`, `performers.html`, `info.html` |
 | Minimálně 3 sekce a 3 články | Splněno | Program i seznam účinkujících obsahují více sekcí a článků |
 | Metadata stránky | Splněno | `title`, `description`, Open Graph, Twitter card, JSON-LD |
-| Externí CSS | Splněno | [web/style.css](web/style.css) |
+| Externí CSS | Splněno | [web/style.css](https://github.com/gymnastiquekiki-maker/festival/blob/main/web/style.css) |
 | Vlastní vizuální styl | Splněno | Tmavá metalová stylizace, vlastní font, galerie, karty |
-| XML datová základna | Splněno | [data/festival.xml](data/festival.xml) |
-| Validace přes XSD | Splněno | [data/festival.xsd](data/festival.xsd) |
-| Transformace XML do JSON přes XSLT | Splněno | [7xAPI/transformation/festival-info.xslt](7xAPI/transformation/festival-info.xslt) |
-| JSON výstupy | Splněno | [7xAPI/json/festival.json](7xAPI/json/festival.json) |
-| OpenAPI popis API | Splněno | [API/openapi.yaml](API/openapi.yaml) |
+| XML datová základna | Splněno | [data/festival.xml](https://github.com/gymnastiquekiki-maker/festival/blob/main/data/festival.xml) |
+| Validace přes XSD | Splněno | [data/festival.xsd](https://github.com/gymnastiquekiki-maker/festival/blob/main/data/festival.xsd) |
+| Transformace XML do JSON přes XSLT | Splněno | [7xAPI/transformation/festival-info.xslt](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/transformation/festival-info.xslt) |
+| JSON výstupy | Splněno | [7xAPI/json/festival.json](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/json/festival.json) |
+| OpenAPI popis API | Splněno | [API/openapi.yaml](https://github.com/gymnastiquekiki-maker/festival/blob/main/API/openapi.yaml) |
 | Napojení HTML na XML data | Splněno | `program.html` načítá `festival.xml`; na stránkách jsou vazby na XML endpoint |
 | Minimálně 3 dny programu | Splněno | 14. 8. 2026 až 16. 8. 2026 |
 | Minimálně 2 místa konání | Splněno | 2 scény v XML datech |
@@ -88,15 +88,15 @@ Z metodického hlediska šlo o kombinaci ručního návrhu, iterativních úprav
 | Fáze | Popis |
 |---|---|
 | 1. Návrh tématu | Bylo zvoleno téma fiktivního metalového festivalu v Praze. |
-| 2. První specifikace | Vznikl soubor [specification.md](specification.md) a pracovní materiály ve složce [projekt](projekt). |
+| 2. První specifikace | Vznikl soubor [specification.md](https://github.com/gymnastiquekiki-maker/festival/blob/main/specification.md) a pracovní materiály ve složce [projekt](https://github.com/gymnastiquekiki-maker/festival/tree/main/projekt). |
 | 3. Datový model | Byl vytvořen `festival.xml` se sekcemi `info`, `venues`, `performers` a `events`. |
 | 4. Webová část | Postupně vznikly stránky `index.html`, `program.html`, `performers.html` a `info.html`. |
 | 5. Stylování | Byl doplněn externí CSS soubor a sjednocen vzhled stránek. |
 | 6. Metadata a sémantika | Do stránek byly doplněny metadata, Open Graph a JSON-LD. |
 | 7. Validace dat | K XML byl vytvořen XSD soubor s vlastními omezeními. |
-| 8. Transformace | Vznikla sada XSLT transformací a skript [7xAPI/transform.ps1](7xAPI/transform.ps1). |
+| 8. Transformace | Vznikla sada XSLT transformací a skript [7xAPI/transform.ps1](https://github.com/gymnastiquekiki-maker/festival/blob/main/7xAPI/transform.ps1). |
 | 9. API vrstva | Byly vygenerovány JSON výstupy a připravena OpenAPI specifikace. |
-| 10. Finalizace | Byla vytvořena finální odevzdávací verze ve složce [web](web) a doplněna dokumentace. |
+| 10. Finalizace | Byla vytvořena finální odevzdávací verze ve složce [web](https://github.com/gymnastiquekiki-maker/festival/tree/main/web) a doplněna dokumentace. |
 
 # 6. Které nástroje byly využity, verze
 
@@ -170,4 +170,4 @@ seznam použitých nástrojů včetně verzí a ukázky hlavních promptů.
 
 ---
 
-Tato nová dokumentace doplňuje původní [DOCUMENTATION.md](DOCUMENTATION.md) a ponechává ji beze změny.
+Tato nová dokumentace doplňuje původní [DOCUMENTATION.md](https://github.com/gymnastiquekiki-maker/festival/blob/main/DOCUMENTATION.md) a ponechává ji beze změny.
