@@ -102,7 +102,7 @@ Z metodického hlediska šlo o kombinaci ručního návrhu, iterativních úprav
 
 | Nástroj | Verze | Využití |
 |---|---|---|
-| GPT-5.2-Codex | uvedeno v původní dokumentaci | průběžné úpravy HTML, CSS, kontrola požadavků a dokumentace |
+| GPT | 5-2 codex, 5-3 codex, 5-4 | průběžné úpravy HTML, CSS, kontrola požadavků a dokumentace |
 | Gemini | verze nebyla v podkladech zaznamenána | prvotní generování základních podkladů do složky `projekt/` |
 | Git | 2.53.0.windows.1 | verzování projektu |
 | Windows PowerShell | 5.1.26100.7920 | práce se skripty, transformace, správa souborů |

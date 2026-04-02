@@ -7,11 +7,12 @@
   <meta name="description" content="Program metalového festivalu Iron Forge Prague 2026 rozdělený podle dnů a scén.">
   <meta property="og:title" content="Iron Forge Prague 2026 — Program">
   <meta property="og:description" content="Harmonogram pro 14.–16. 8. 2026, dvě scény a 60 interpretů.">
-  <meta property="og:image" content="Black-Metal-Logos-4.jpg">
+  <meta property="og:image" content="https://picsum.photos/1200/630?random=102">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="Black-Metal-Logos-4.jpg">
+  <meta name="twitter:image" content="https://picsum.photos/1200/630?random=102">
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" type="application/xml" href="festival.xml" title="Festival API (XML)">
+  <link rel="alternate" type="application/json" href="/api/events" title="Events API (JSON)">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -97,7 +98,7 @@
       </div>
     </section>
 
-    <section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14">
+    <section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14" data-api="/api/events?day=2026-08-14">
       <h2>Pátek 14. 8. 2026</h2>
       <article>
         <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
@@ -133,7 +134,7 @@
       </article>
     </section>
 
-    <section id="day-2" data-endpoint="festival.xml#events" data-date="2026-08-15">
+    <section id="day-2" data-endpoint="festival.xml#events" data-date="2026-08-15" data-api="/api/events?day=2026-08-15">
       <h2>Sobota 15. 8. 2026</h2>
       <article>
         <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
@@ -169,7 +170,7 @@
       </article>
     </section>
 
-    <section id="day-3" data-endpoint="festival.xml#events" data-date="2026-08-16">
+    <section id="day-3" data-endpoint="festival.xml#events" data-date="2026-08-16" data-api="/api/events?day=2026-08-16">
       <h2>Neděle 16. 8. 2026</h2>
       <article>
         <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
@@ -208,7 +209,7 @@
 
   <footer class="site-footer">
     <p>&copy; 2026 Iron Forge Prague.</p>
-    <p class="api-note">api zdroje: data pro web vychází z festivalového xml endpointu. /api/festival (xml)</p>
+    <p class="api-note">API vazba: program odpovídá endpointu <code>/api/events</code> a používá filtr <code>day=YYYY-MM-DD</code>.</p>
   </footer>
   <script>
   (function () {
