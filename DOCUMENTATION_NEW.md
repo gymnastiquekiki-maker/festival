@@ -117,7 +117,8 @@ Níže jsou uvedeny reprezentativní prompty odpovídající skutečnému postup
 ## Prompt 1: Návrh tématu a datového základu
 
 ```text
-Načti si složku Značkovací jazyky, jsou zde specifikace k projektu, který budeme vytvářet. Na základě tohoto vzoru rozpracuj návrh fiktivního festivalu v Praze, jeho základní identita je metalovy festival, bude se konat tři dny, mít
+Načti si složku Značkovací jazyky, jsou zde specifikace k projektu, který budeme vytvářet. Na základě tohoto vzoru rozpracuj 
+návrh fiktivního festivalu v Praze, jeho základní identita je metalovy festival, bude se konat tři dny, mít
 alespoň dvě scény, minimálně 60 účinkujících.
 ```
 
@@ -141,16 +142,16 @@ galerii, karty účinkujících a oddělené sekce.
 
 ```text
 Zkontroluj, jestli projekt splňuje požadavky na předmět Značkovací jazyky.
-Ověř sémantické HTML, povinné elementy, metadata, externí CSS, XML, XSD, XSLT transformace, JSON výstupy a vazbu mezi webem a daty.
-U každého bodu napiš důkaz z konkrétních souborů.
+Ověř sémantické HTML, povinné elementy, metadata, externí CSS, XML, XSD, XSLT transformace, JSON výstupy a vazbu mezi 
+webem a daty. U každého bodu napiš důkaz z konkrétních souborů.
 ```
 
 ## Prompt 5: Datová a API vrstva
 
 ```text
 Chci rozšířit XML model festivalu tak, aby šel použít pro API.
-Zkontroluj a případně dotáhni XSD validaci. Podle festival-event-detail.xslt, vytvoř XSLT transformace pro list i detail endpointy. Spusť transform.ps1 a
-vygeneruj JSON výstupy. 
+Zkontroluj a případně dotáhni XSD validaci. Podle festival-event-detail.xslt, vytvoř XSLT transformace pro 
+list i detail endpointy. Spusť transform.ps1 a vygeneruj JSON výstupy. 
 ```
 ## Prompt 6: Dokumentace
 
@@ -178,4 +179,4 @@ seznam použitých nástrojů včetně verzí a ukázky hlavních promptů.
 
 ---
 
-Tato nová dokumentace doplňuje původní [DOCUMENTATION.md](more/root-files/DOCUMENTATION.md) a ponechává ji beze změny.
+Tato nová dokumentace doplňuje původní [DOCUMENTATION.md](more/root-files/DOCUMENTATION.md).
