@@ -3,9 +3,9 @@
 **Název projektu:** Iron Forge Prague 2026  
 **Předmět:** Značkovací jazyky  
 **Typ projektu:** Webová prezentace festivalu s datovou vrstvou XML, XSD, XSLT, JSON a OpenAPI  
-**Místo řešení v repozitáři:** `web/`, `data/`, `data/transformation/festival-info.xslt`, `data/json/festival.json`, `data/openapi.yaml`  
-**Hlavní dokumentace projektu:** `DOCUMENTATION.md`  
-**Nová dokumentace:** `DOCUMENTATION_NEW.md`  
+**Místo řešení v repozitáři:** [web](web), [data](data), [festival-info.xslt](data/transformation/festival-info.xslt), [festival.json](data/json/festival.json), [openapi.yaml](data/openapi.yaml)  
+**Hlavní dokumentace projektu:** [DOCUMENTATION.md](more/root-files/DOCUMENTATION.md)  
+**Nová dokumentace:** [DOCUMENTATION_NEW.md](DOCUMENTATION_NEW.md)  
 **Datum:** 21. 3. 2026
 
 ---
@@ -24,7 +24,7 @@
 
 # 1. Stručný popis festivalu
 
-Iron Forge Prague 2026 je fiktivní třídenní metalový festival zasazený do industriálního prostředí Nákladového nádraží Žižkov v Praze. Projekt kombinuje prezentační web se samostatnou datovou vrstvou. Web obsahuje úvodní stránku, program, účinkující a praktické informace. Datová část je postavená na XML souboru `festival.xml`, který je validovaný pomocí XSD a dále transformovaný do JSON výstupů přes XSLT. Nad vzniklými výstupy je připravena i OpenAPI specifikace.
+Iron Forge Prague 2026 je fiktivní třídenní metalový festival zasazený do industriálního prostředí Nákladového nádraží Žižkov v Praze. Projekt kombinuje prezentační web se samostatnou datovou vrstvou. Web obsahuje úvodní stránku, program, účinkující a praktické informace. Datová část je postavená na XML souboru [festival.xml](data/festival.xml), který je validovaný pomocí XSD a dále transformovaný do JSON výstupů přes XSLT. Nad vzniklými výstupy je připravena i OpenAPI specifikace.
 
 Festival je navržen jako tematicky konzistentní metalová akce se dvěma scénami, třídenním programem, šedesáti účinkujícími a šedesáti programovými položkami. Vedle samotného webu projekt řeší také sémantické HTML, metadata, strukturovaná data a oddělení prezentační a datové vrstvy.
 
@@ -36,34 +36,34 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 
 | Oblast | Umístění |
 |---|---|
-| Dokumentace | `DOCUMENTATION_NEW.md` |
-| Hlavní XML zdroj | `data/festival.xml` |
-| XSD validace | `data/festival.xsd` |
-| OpenAPI specifikace | `data/openapi.yaml` |
-| XSLT transformace | `data/transformation/festival-info.xslt` |
-| JSON výstupy | `data/json/festival.json` |
-| Finální web pro odevzdání | `web/` |
+| Dokumentace | [DOCUMENTATION_NEW.md](DOCUMENTATION_NEW.md) |
+| Hlavní XML zdroj | [data/festival.xml](data/festival.xml) |
+| XSD validace | [data/festival.xsd](data/festival.xsd) |
+| OpenAPI specifikace | [data/openapi.yaml](data/openapi.yaml) |
+| XSLT transformace | [data/transformation/festival-info.xslt](data/transformation/festival-info.xslt) |
+| JSON výstupy | [data/json/festival.json](data/json/festival.json) |
+| Finální web pro odevzdání | [web](web) |
 
 # 3. Seznam všech požadavků v tabulce
 
 | Požadavek | Stav | Řešení |
 |---|---|---|
-| Titulní stránka webu | Splněno | `web/index.html` |
-| Stránka s programem | Splněno | `web/program.html` |
-| Stránka s účinkujícími | Splněno | `web/performers.html` |
-| Stránka s praktickými informacemi | Splněno | `web/info.html` |
-| Sémantické HTML elementy (`header`, `nav`, `main`, `section`, `article`, `footer`) | Splněno | Použito napříč HTML stránkami ve složce `web/` |
-| Povinné HTML prvky (`head`, `meta`, `title`, `p`, `a`, `img`, `h1`, `h2`, `h3`, `aside`, `address`, `time`, `ul/ol`, `li`) | Splněno | Implementováno v `index.html`, `program.html`, `performers.html`, `info.html` |
+| Titulní stránka webu | Splněno | [web/index.html](web/index.html) |
+| Stránka s programem | Splněno | [web/program.html](web/program.html) |
+| Stránka s účinkujícími | Splněno | [web/performers.html](web/performers.html) |
+| Stránka s praktickými informacemi | Splněno | [web/info.html](web/info.html) |
+| Sémantické HTML elementy (`header`, `nav`, `main`, `section`, `article`, `footer`) | Splněno | Použito napříč HTML stránkami ve složce [web](web) |
+| Povinné HTML prvky (`head`, `meta`, `title`, `p`, `a`, `img`, `h1`, `h2`, `h3`, `aside`, `address`, `time`, `ul/ol`, `li`) | Splněno | Implementováno v [index.html](web/index.html), [program.html](web/program.html), [performers.html](web/performers.html), [info.html](web/info.html) |
 | Minimálně 3 sekce a 3 články | Splněno | Program i seznam účinkujících obsahují více sekcí a článků |
 | Metadata stránky | Splněno | `title`, `description`, Open Graph, Twitter card, JSON-LD |
-| Externí CSS | Splněno | `web/style.css` |
+| Externí CSS | Splněno | [web/style.css](web/style.css) |
 | Vlastní vizuální styl | Splněno | Tmavá metalová stylizace, vlastní font, galerie, karty |
-| XML datová základna | Splněno | `data/festival.xml` |
-| Validace přes XSD | Splněno | `data/festival.xsd` |
-| Transformace XML do JSON přes XSLT | Splněno | `data/transformation/festival-info.xslt` |
-| JSON výstupy | Splněno | `data/json/festival.json` |
-| OpenAPI popis API | Splněno | `data/openapi.yaml` |
-| Napojení HTML na XML data | Splněno | `program.html` načítá `festival.xml`; na stránkách jsou vazby na XML endpoint |
+| XML datová základna | Splněno | [data/festival.xml](data/festival.xml) |
+| Validace přes XSD | Splněno | [data/festival.xsd](data/festival.xsd) |
+| Transformace XML do JSON přes XSLT | Splněno | [data/transformation/festival-info.xslt](data/transformation/festival-info.xslt) |
+| JSON výstupy | Splněno | [data/json/festival.json](data/json/festival.json) |
+| OpenAPI popis API | Splněno | [data/openapi.yaml](data/openapi.yaml) |
+| Napojení HTML na XML data | Splněno | [program.html](web/program.html) načítá [festival.xml](data/festival.xml); na stránkách jsou vazby na XML endpoint |
 | Minimálně 3 dny programu | Splněno | 14. 8. 2026 až 16. 8. 2026 |
 | Minimálně 2 místa konání | Splněno | 2 scény v XML datech |
 | Minimálně 60 účinkujících | Splněno | 60 performerů v XML datech |
@@ -87,13 +87,13 @@ Nejprve vznikl základní koncept festivalu a návrh datového modelu. Poté se 
 | Fáze | Popis |
 |---|---|
 | 1. Návrh tématu | Bylo zvoleno téma fiktivního metalového festivalu v Praze. |
-| 2. První specifikace | Vznikl soubor `specification.md` a pracovní materiály ve složce `projekt/`. |
-| 3. Datový model | Byl vytvořen `festival.xml` se sekcemi `info`, `venues`, `performers` a `events`. |
-| 4. Webová část | Postupně vznikly stránky `index.html`, `program.html`, `performers.html` a `info.html`. |
+| 2. První specifikace | Vznikl soubor [specification.md](specification.md) a pracovní materiály ve složce [projekt](more/root-folders/projekt). |
+| 3. Datový model | Byl vytvořen [festival.xml](data/festival.xml) se sekcemi `info`, `venues`, `performers` a `events`. |
+| 4. Webová část | Postupně vznikly stránky [index.html](web/index.html), [program.html](web/program.html), [performers.html](web/performers.html) a [info.html](web/info.html). |
 | 5. Stylování | Byl doplněn externí CSS soubor a sjednocen vzhled stránek. |
 | 6. Metadata a sémantika | Do stránek byly doplněny metadata, Open Graph a JSON-LD. |
 | 7. Validace dat | K XML byl vytvořen XSD soubor s vlastními omezeními. |
-| 8. Transformace | Vznikla sada XSLT transformací a skript `data/transform.ps1`. |
+| 8. Transformace | Vznikla sada XSLT transformací a skript [data/transform.ps1](data/transform.ps1). |
 | 9. API vrstva | Byly vygenerovány JSON výstupy a připravena OpenAPI specifikace. |
 | 10. Finalizace | Byla vytvořena finální odevzdávací verze ve složce `web/` a doplněna dokumentace. |
 
@@ -149,11 +149,24 @@ U každého bodu napiš důkaz z konkrétních souborů.
 
 ```text
 Chci rozšířit XML model festivalu tak, aby šel použít pro API.
-Zkontroluj a případně dotáhni XSD validaci , vytvoř XSLT transformace pro list i detail endpointy,
-vygeneruj JSON výstupy a připrav OpenAPI 3.1 specifikaci.
+Zkontroluj a případně dotáhni XSD validaci. Podle festival-event-detail.xslt, vytvoř XSLT transformace pro list i detail endpointy. Spusť transform.ps1 a
+vygeneruj JSON výstupy. 
+```
+## Prompt 6: Dokumentace
+
+```text
+Pojďme vytvořit OpenAPI 3.1. specifikace. Chci aby v něm bylo popsáno: 
+GET /api/festival
+GET /api/venues
+GET /api/venues/{id}
+GET /api/performers
+GET /api/performers/{id}
+GET /api/events
+GET /api/events/{id}
+U každého uveď jaké má parametry, že vrací application/json, jeké má HTTP kódy (200, 400, 404) a na jaké schéma je JSON navázaný
 ```
 
-## Prompt 6: Dokumentace
+## Prompt 7: Dokumentace
 
 ```text
 Vytvoř novou projektovou dokumentaci v češtině.
@@ -165,4 +178,4 @@ seznam použitých nástrojů včetně verzí a ukázky hlavních promptů.
 
 ---
 
-Tato nová dokumentace doplňuje původní `DOCUMENTATION.md` a ponechává ji beze změny.
+Tato nová dokumentace doplňuje původní [DOCUMENTATION.md](more/root-files/DOCUMENTATION.md) a ponechává ji beze změny.
