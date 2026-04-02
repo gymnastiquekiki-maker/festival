@@ -11,7 +11,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://picsum.photos/1200/630?random=104">
   <link rel="stylesheet" href="style.css">
-  <link rel="alternate" type="application/xml" href="festival.xml" title="Festival API (XML)">
+  <link rel="alternate" type="application/xml" href="../data/festival.xml" title="Festival API (XML)">
   <link rel="alternate" type="application/json" href="/api/festival" title="Festival API (JSON)">
 </head>
 <body>
@@ -31,7 +31,7 @@
   </header>
 
   <main>
-    <section id="location" data-endpoint="festival.xml#info" data-api="/api/festival">
+    <section id="location" data-endpoint="../data/festival.xml#info" data-api="/api/festival">
       <h2>Místo konání</h2>
       <address>
         Nákladové nádraží Žižkov<br>
@@ -41,7 +41,7 @@
       <div class="venue-map-frame">
         <p class="venue-map-fallback">Náhled mapy se načítá…</p>
         <a href="https://www.openstreetmap.org/?mlat=50.0852&mlon=14.4696#map=16/50.0852/14.4696" target="_blank" rel="noopener">
-          <img class="venue-map" src="mapa-zizkov.png" alt="Mapa — Nákladové nádraží Žižkov" loading="lazy">
+          <img class="venue-map" src="../more/web-assets/mapa-zizkov.png" alt="Mapa — Nákladové nádraží Žižkov" loading="lazy">
         </a>
         <p><a class="map-link" href="https://www.openstreetmap.org/?mlat=50.0852&mlon=14.4696#map=16/50.0852/14.4696" target="_blank" rel="noopener">Otevřít mapu</a></p>
       </div>
@@ -141,8 +141,8 @@
       }
 
       async function transformToJson() {
-        const xmlUrl = buildUrl("data/festival.xml");
-        const xsltUrl = buildUrl("data/xslt/festival-events.xslt");
+        const xmlUrl = buildUrl("../data/festival.xml");
+        const xsltUrl = buildUrl("../data/transformation/festival-events.xslt");
 
         const [xmlText, xsltText] = await Promise.all([
           fetchText(xmlUrl),

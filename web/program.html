@@ -11,7 +11,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://picsum.photos/1200/630?random=102">
   <link rel="stylesheet" href="style.css">
-  <link rel="alternate" type="application/xml" href="festival.xml" title="Festival API (XML)">
+  <link rel="alternate" type="application/xml" href="../data/festival.xml" title="Festival API (XML)">
   <link rel="alternate" type="application/json" href="/api/events" title="Events API (JSON)">
   <script type="application/ld+json">
   {
@@ -94,14 +94,14 @@
         <h2>Harmonogram tří dnů</h2>
         <p>Dvě scény, 60 vystoupení a noční závěr s ohnivou show.</p></div>
       <div class="hero-media">
-        <img src="featured-photos/program-harmonogram.jpg" alt="Fotografie pro sekci Harmonogram tří dnů" loading="lazy">
+        <img src="../more/web-assets/featured-photos/program-harmonogram.jpg" alt="Fotografie pro sekci Harmonogram tří dnů" loading="lazy">
       </div>
     </section>
 
-    <section id="day-1" data-endpoint="festival.xml#events" data-date="2026-08-14" data-api="/api/events?day=2026-08-14">
+    <section id="day-1" data-endpoint="../data/festival.xml#events" data-date="2026-08-14" data-api="/api/events?day=2026-08-14">
       <h2>Pátek 14. 8. 2026</h2>
       <article>
-        <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-14T18:00">18:00</time> Metallica</li>
@@ -117,7 +117,7 @@
         </ul>
       </article>
       <article>
-        <img class="venue-visual" src="featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-14T18:00">18:00</time> Rammstein</li>
@@ -134,10 +134,10 @@
       </article>
     </section>
 
-    <section id="day-2" data-endpoint="festival.xml#events" data-date="2026-08-15" data-api="/api/events?day=2026-08-15">
+    <section id="day-2" data-endpoint="../data/festival.xml#events" data-date="2026-08-15" data-api="/api/events?day=2026-08-15">
       <h2>Sobota 15. 8. 2026</h2>
       <article>
-        <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-15T18:00">18:00</time> Judas Priest</li>
@@ -153,7 +153,7 @@
         </ul>
       </article>
       <article>
-        <img class="venue-visual" src="featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-15T18:00">18:00</time> Korn</li>
@@ -170,10 +170,10 @@
       </article>
     </section>
 
-    <section id="day-3" data-endpoint="festival.xml#events" data-date="2026-08-16" data-api="/api/events?day=2026-08-16">
+    <section id="day-3" data-endpoint="../data/festival.xml#events" data-date="2026-08-16" data-api="/api/events?day=2026-08-16">
       <h2>Neděle 16. 8. 2026</h2>
       <article>
-        <img class="venue-visual" src="featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/steel-stage.jpg" alt="Fotografie místa Steel Stage" loading="lazy">
         <h3>Steel Stage</h3>
         <ul>
           <li><time datetime="2026-08-16T16:00">16:00</time> Motörhead</li>
@@ -189,7 +189,7 @@
         </ul>
       </article>
       <article>
-        <img class="venue-visual" src="featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
+        <img class="venue-visual" src="../more/web-assets/featured-photos/pyro-hall.jpg" alt="Fotografie místa Pyro Hall" loading="lazy">
         <h3>Pyro Hall</h3>
         <ul>
           <li><time datetime="2026-08-16T16:00">16:00</time> Death</li>
@@ -213,10 +213,10 @@
   </footer>
   <script>
   (function () {
-    var url = "festival.xml";
+    var url = "../data/festival.xml";
     var venueImages = {
-      "Steel Stage": { src: "featured-photos/steel-stage.jpg", alt: "Fotografie místa Steel Stage" },
-      "Pyro Hall": { src: "featured-photos/pyro-hall.jpg", alt: "Fotografie místa Pyro Hall" }
+      "Steel Stage": { src: "../more/web-assets/featured-photos/steel-stage.jpg", alt: "Fotografie místa Steel Stage" },
+      "Pyro Hall": { src: "../more/web-assets/featured-photos/pyro-hall.jpg", alt: "Fotografie místa Pyro Hall" }
     };
     function pad(number) {
       return String(number).padStart(2, "0");
@@ -273,7 +273,7 @@
         };
       });
 
-      var sections = Array.from(document.querySelectorAll("section[data-endpoint=\"festival.xml#events\"][data-date]"));
+      var sections = Array.from(document.querySelectorAll("section[data-endpoint=\"../data/festival.xml#events\"][data-date]"));
       sections.forEach(function (section) {
         var date = section.dataset.date;
         var dayEvents = events.filter(function (ev) { return ev.festivalDay === date; });

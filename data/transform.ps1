@@ -2,7 +2,7 @@ param(
   [string]$Root = (Split-Path -Parent $MyInvocation.MyCommand.Path)
 )
 
-$xmlPath = Join-Path (Split-Path -Parent $Root) "data\festival.xml"
+$xmlPath = Join-Path $Root "festival.xml"
 $xsltDir = Join-Path $Root "transformation"
 $outDir = Join-Path $Root "json"
 

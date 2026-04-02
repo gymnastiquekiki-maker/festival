@@ -22,7 +22,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/festival.schema.json'
+                $ref: './json-schema/festival.schema.json'
               example:
                 name: Iron Forge Prague
                 edition: 5
@@ -62,7 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/venues.schema.json'
+                $ref: './json-schema/venues.schema.json'
               example:
                 - id: v1
                   name: Steel Stage
@@ -83,7 +83,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/venue.schema.json'
+                $ref: './json-schema/venue.schema.json'
               example:
                 id: v1
                 name: Steel Stage
@@ -100,7 +100,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/performers.schema.json'
+                $ref: './json-schema/performers.schema.json'
               example:
                 - id: p1
                   name: Metallica
@@ -121,7 +121,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/performer.schema.json'
+                $ref: './json-schema/performer.schema.json'
               example:
                 id: p1
                 name: Metallica
@@ -144,7 +144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/events.schema.json'
+                $ref: './json-schema/events.schema.json'
               example:
                 items:
                   - id: e1
@@ -180,7 +180,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../7xAPI/json-schema/event.schema.json'
+                $ref: './json-schema/event.schema.json'
               example:
                 id: e1
                 venue_id: v1

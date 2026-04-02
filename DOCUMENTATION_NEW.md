@@ -3,7 +3,7 @@
 **Název projektu:** Iron Forge Prague 2026  
 **Předmět:** Značkovací jazyky  
 **Typ projektu:** Webová prezentace festivalu s datovou vrstvou XML, XSD, XSLT, JSON a OpenAPI  
-**Místo řešení v repozitáři:** `web/`, `data/`, `7xAPI/transformation/festival-info.xslt`, `7xAPI/json/festival.json`, `API/openapi.yaml`  
+**Místo řešení v repozitáři:** `web/`, `data/`, `data/transformation/festival-info.xslt`, `data/json/festival.json`, `data/openapi.yaml`  
 **Hlavní dokumentace projektu:** `DOCUMENTATION.md`  
 **Nová dokumentace:** `DOCUMENTATION_NEW.md`  
 **Datum:** 21. 3. 2026
@@ -36,13 +36,12 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 
 | Oblast | Umístění |
 |---|---|
-| Původní dokumentace | `DOCUMENTATION.md` |
-| Nová dokumentace | `DOCUMENTATION_NEW.md` |
+| Dokumentace | `DOCUMENTATION_NEW.md` |
 | Hlavní XML zdroj | `data/festival.xml` |
 | XSD validace | `data/festival.xsd` |
-| OpenAPI specifikace | `API/openapi.yaml` |
-| XSLT transformace | `7xAPI/transformation/festival-info.xslt` |
-| JSON výstupy | `7xAPI/json/festival.json` |
+| OpenAPI specifikace | `data/openapi.yaml` |
+| XSLT transformace | `data/transformation/festival-info.xslt` |
+| JSON výstupy | `data/json/festival.json` |
 | Finální web pro odevzdání | `web/` |
 
 # 3. Seznam všech požadavků v tabulce
@@ -61,9 +60,9 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 | Vlastní vizuální styl | Splněno | Tmavá metalová stylizace, vlastní font, galerie, karty |
 | XML datová základna | Splněno | `data/festival.xml` |
 | Validace přes XSD | Splněno | `data/festival.xsd` |
-| Transformace XML do JSON přes XSLT | Splněno | `7xAPI/transformation/festival-info.xslt` |
-| JSON výstupy | Splněno | `7xAPI/json/festival.json` |
-| OpenAPI popis API | Splněno | `API/openapi.yaml` |
+| Transformace XML do JSON přes XSLT | Splněno | `data/transformation/festival-info.xslt` |
+| JSON výstupy | Splněno | `data/json/festival.json` |
+| OpenAPI popis API | Splněno | `data/openapi.yaml` |
 | Napojení HTML na XML data | Splněno | `program.html` načítá `festival.xml`; na stránkách jsou vazby na XML endpoint |
 | Minimálně 3 dny programu | Splněno | 14. 8. 2026 až 16. 8. 2026 |
 | Minimálně 2 místa konání | Splněno | 2 scény v XML datech |
@@ -72,7 +71,7 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 
 # 4. Metodika projektu
 
-Projekt byl řešen inkrementálně. Nejprve vznikl základní koncept festivalu a návrh datového modelu. Poté se souběžně rozvíjela obsahová, prezentační a datová vrstva:
+Nejprve vznikl základní koncept festivalu a návrh datového modelu. Poté se souběžně rozvíjela obsahová, prezentační a datová vrstva:
 
 1. Byl určen námět projektu, cílový styl a struktura festivalu.
 2. Vznikl XML datový zdroj jako centrální místo pravdy pro informace o festivalu.
@@ -81,7 +80,7 @@ Projekt byl řešen inkrementálně. Nejprve vznikl základní koncept festivalu
 5. Po dokončení webové vrstvy byly doplněny XSLT transformace do JSON a navazující OpenAPI specifikace.
 6. Na závěr proběhla kontrola požadavků a doplnění dokumentace.
 
-Z metodického hlediska šlo o kombinaci ručního návrhu, iterativních úprav a využití AI asistence pro rychlejší generování návrhů, kontrolu požadavků a postupné zpřesňování struktury.
+Šlo o kombinaci ručního návrhu, iterativních úprav a využití AI asistence pro rychlejší generování návrhů, kontrolu požadavků a postupné zpřesňování struktury.
 
 # 5. Postup tvorby
 
@@ -94,7 +93,7 @@ Z metodického hlediska šlo o kombinaci ručního návrhu, iterativních úprav
 | 5. Stylování | Byl doplněn externí CSS soubor a sjednocen vzhled stránek. |
 | 6. Metadata a sémantika | Do stránek byly doplněny metadata, Open Graph a JSON-LD. |
 | 7. Validace dat | K XML byl vytvořen XSD soubor s vlastními omezeními. |
-| 8. Transformace | Vznikla sada XSLT transformací a skript `7xAPI/transform.ps1`. |
+| 8. Transformace | Vznikla sada XSLT transformací a skript `data/transform.ps1`. |
 | 9. API vrstva | Byly vygenerovány JSON výstupy a připravena OpenAPI specifikace. |
 | 10. Finalizace | Byla vytvořena finální odevzdávací verze ve složce `web/` a doplněna dokumentace. |
 
@@ -103,14 +102,13 @@ Z metodického hlediska šlo o kombinaci ručního návrhu, iterativních úprav
 | Nástroj | Verze | Využití |
 |---|---|---|
 | GPT | 5-2 codex, 5-3 codex, 5-4 | průběžné úpravy HTML, CSS, kontrola požadavků a dokumentace |
-| Gemini | verze nebyla v podkladech zaznamenána | prvotní generování základních podkladů do složky `projekt/` |
+| Gemini |  | prvotní generování základních podkladů do složky `projekt/` |
 | Git | 2.53.0.windows.1 | verzování projektu |
 | Windows PowerShell | 5.1.26100.7920 | práce se skripty, transformace, správa souborů |
 | ripgrep | 15.1.0 | rychlé vyhledávání v projektu |
-| Markdown | bez pevné verze | technická dokumentace a specifikace |
+| Markdown |  | technická dokumentace a specifikace |
 | XML / XSD / XSLT / JSON / OpenAPI | standardy bez jedné lokální verze | datová a API vrstva projektu |
 
-Poznámka: u AI nástrojů lze uvést jen ty verze, které jsou skutečně doložené v podkladech projektu. U Gemini nebyla konkrétní verze v dostupných souborech zapsaná.
 
 # 7. Ukázky hlavních promptů
 
@@ -119,10 +117,8 @@ Níže jsou uvedeny reprezentativní prompty odpovídající skutečnému postup
 ## Prompt 1: Návrh tématu a datového základu
 
 ```text
-Vytvoř návrh projektu pro předmět Značkovací jazyky na téma metalový festival.
-Navrhni fiktivní festival v Praze, jeho základní identitu, tři dny programu,
-alespoň dvě scény, minimálně 60 účinkujících a datový XML základ, ze kterého
-později půjde vytvořit web i API vrstva.
+Načti si složku Značkovací jazyky, jsou zde specifikace k projektu, který budeme vytvářet. Na základě tohoto vzoru rozpracuj návrh fiktivního festivalu v Praze, jeho základní identita je metalovy festival, bude se konat tři dny, mít
+alespoň dvě scény, minimálně 60 účinkujících.
 ```
 
 ## Prompt 2: Generování první specifikace
@@ -145,16 +141,15 @@ galerii, karty účinkujících a oddělené sekce.
 
 ```text
 Zkontroluj, jestli projekt splňuje požadavky na předmět Značkovací jazyky.
-Ověř sémantické HTML, povinné elementy, metadata, externí CSS, XML, XSD,
-XSLT transformace, JSON výstupy a vazbu mezi webem a daty.
+Ověř sémantické HTML, povinné elementy, metadata, externí CSS, XML, XSD, XSLT transformace, JSON výstupy a vazbu mezi webem a daty.
 U každého bodu napiš důkaz z konkrétních souborů.
 ```
 
 ## Prompt 5: Datová a API vrstva
 
 ```text
-Rozšiř XML model festivalu tak, aby šel použít pro API.
-Přidej XSD validaci, vytvoř XSLT transformace pro list i detail endpointy,
+Chci rozšířit XML model festivalu tak, aby šel použít pro API.
+Zkontroluj a případně dotáhni XSD validaci , vytvoř XSLT transformace pro list i detail endpointy,
 vygeneruj JSON výstupy a připrav OpenAPI 3.1 specifikaci.
 ```
 
