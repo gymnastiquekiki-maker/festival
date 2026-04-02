@@ -3,7 +3,7 @@
 **Název projektu:** Iron Forge Prague 2026  
 **Předmět:** Značkovací jazyky  
 **Typ projektu:** Webová prezentace festivalu s datovou vrstvou XML, XSD, XSLT, JSON a OpenAPI  
-**Místo řešení v repozitáři:** [web](web), [data](data), [festival-info.xslt](data/transformation/festival-info.xslt), [festival.json](data/json/festival.json), [openapi.yaml](data/openapi.yaml)  
+**Místo řešení v repozitáři:** [web](web), [data](data), [transformace XSLT](data/transformation), [JSON výstupy](data/json), [openapi.yaml](data/openapi.yaml)  
 **Hlavní dokumentace projektu:** [DOCUMENTATION.md](more/root-files/DOCUMENTATION.md)  
 **Nová dokumentace:** [DOCUMENTATION_NEW.md](DOCUMENTATION_NEW.md)  
 **Datum:** 21. 3. 2026
@@ -40,8 +40,8 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 | Hlavní XML zdroj | [data/festival.xml](data/festival.xml) |
 | XSD validace | [data/festival.xsd](data/festival.xsd) |
 | OpenAPI specifikace | [data/openapi.yaml](data/openapi.yaml) |
-| XSLT transformace | [data/transformation/festival-info.xslt](data/transformation/festival-info.xslt) |
-| JSON výstupy | [data/json/festival.json](data/json/festival.json) |
+| XSLT transformace | [data/transformation](data/transformation) |
+| JSON výstupy | [data/json](data/json) |
 | Finální web pro odevzdání | [web](web) |
 
 # 3. Seznam všech požadavků v tabulce
@@ -60,8 +60,8 @@ Festival je navržen jako tematicky konzistentní metalová akce se dvěma scén
 | Vlastní vizuální styl | Splněno | Tmavá metalová stylizace, vlastní font, galerie, karty |
 | XML datová základna | Splněno | [data/festival.xml](data/festival.xml) |
 | Validace přes XSD | Splněno | [data/festival.xsd](data/festival.xsd) |
-| Transformace XML do JSON přes XSLT | Splněno | [data/transformation/festival-info.xslt](data/transformation/festival-info.xslt) |
-| JSON výstupy | Splněno | [data/json/festival.json](data/json/festival.json) |
+| Transformace XML do JSON přes XSLT | Splněno | [data/transformation](data/transformation) |
+| JSON výstupy | Splněno | [data/json](data/json) |
 | OpenAPI popis API | Splněno | [data/openapi.yaml](data/openapi.yaml) |
 | Napojení HTML na XML data | Splněno | [program.html](web/program.html) načítá [festival.xml](data/festival.xml); na stránkách jsou vazby na XML endpoint |
 | Minimálně 3 dny programu | Splněno | 14. 8. 2026 až 16. 8. 2026 |
