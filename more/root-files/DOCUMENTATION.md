@@ -2,7 +2,7 @@
 
 ## 1) Přehled projektu
 Webová prezentace fiktivního metalového festivalu. Projekt obsahuje:
-- HTML stránky (kořen i složka `web/` pro odevzdání),
+- HTML stránky ve složce `web/`,
 - CSS stylování,
 - XML datový zdroj,
 - XSD validaci,
@@ -12,11 +12,13 @@ Webová prezentace fiktivního metalového festivalu. Projekt obsahuje:
 ## 2) Struktura repozitáře (hlavní složky)
 - `web/` – finální verze pro odevzdání (HTML + `style.css` + assets)
 - `data/` – datová základna (XML, XSD, XSLT, JSON, skript)
-- Kořen projektu – pracovní kopie HTML/CSS (stejné stránky jako ve `web/`, ale s `styles.css`)
+- `7xAPI/` – transformační a JSON vrstva API
+- `API/` – OpenAPI specifikace
+- `archive/legacy-root-copy/` – původní pracovní kopie HTML/CSS/XML assetů z kořene
 
-## 3) Kořenové soubory (pracovní verze)
+## 3) Archivované pracovní soubory
 
-### `index.html`
+### `archive/legacy-root-copy/index.html`
 Úvodní stránka festivalu. Obsahuje:
 - hero sekci,
 - základní informace o festivalu,
@@ -24,23 +26,23 @@ Webová prezentace fiktivního metalového festivalu. Projekt obsahuje:
 - galerii,
 - vstupenky.
 
-### `program.html`
+### `archive/legacy-root-copy/program.html`
 Stránka programu. Obsahuje:
 - harmonogram pro 3 dny,
 - rozdělení podle scén,
 - časové údaje v elementu `<time>`.
 
-### `performers.html`
+### `archive/legacy-root-copy/performers.html`
 Seznam interpretů a detailní profily vybraných kapel.
 
-### `info.html`
+### `archive/legacy-root-copy/info.html`
 Praktické informace (místo konání, doprava, ubytování, pravidla vstupu).
 Obsahuje i `<address>` a `<time>`.
 
-### `styles.css`
-Hlavní CSS pro pracovní verzi (kořen). Nastavuje barvy, typografii, pozadí, layouty a responsivitu.
+### `archive/legacy-root-copy/styles.css`
+Původní CSS pro pracovní verzi stránek. Nastavuje barvy, typografii, pozadí, layouty a responsivitu.
 
-### `festival.xml`
+### `archive/legacy-root-copy/festival.xml`
 XML datový zdroj pro festival:
 - `info` (název, ročník, lokace, data),
 - `venues` (scény),
@@ -73,13 +75,13 @@ Obrázek mapy v info stránce.
 ### `web/Black-Metal-Logos-4.jpg`
 Obrázek použitý na webu (hlavní vizuál).
 
-### `web/PickysideRegular-vn7w4.otf`, `web/xirwena1.ttf`
-Lokální fonty použité v CSS.
+### `web/xirwena1.ttf`
+Lokální font použitý v CSS.
 
 ## 5) Složka `data/` – datová základna
 
 ### `data/festival.xml`
-Kopie hlavního XML (datový zdroj). XML bylo rozšířeno o `description`, `tickets` a `links`, aby šlo přímo generovat data pro endpoint `GET /api/festival`.
+Hlavní XML datový zdroj. XML bylo rozšířeno o `description`, `tickets` a `links`, aby šlo přímo generovat data pro endpoint `GET /api/festival`.
 
 ### `data/festival.xsd`
 XSD schéma pro validaci XML. Obsahuje vlastní omezení s komentáři:
@@ -87,8 +89,8 @@ XSD schéma pro validaci XML. Obsahuje vlastní omezení s komentáři:
 - pattern pro ID (`vN`, `pN`, `eN`),
 - rozsah ročníku (1–99).
 
-### `data/xslt/`
-Sada XSLT transformací, které generují JSON pro list i detail endpointy:
+### `7xAPI/transformation/`
+Sada 7 XSLT transformací, které generují JSON pro list i detail endpointy:
 - `festival-info.xslt` → `festival.json`
 - `festival-venues.xslt` → `venues.json`
 - `festival-performers.xslt` → `performers.json`
@@ -97,7 +99,7 @@ Sada XSLT transformací, které generují JSON pro list i detail endpointy:
 - `festival-performer-detail.xslt` → `performers/{id}.json`
 - `festival-event-detail.xslt` → `events/{id}.json`
 
-### `data/json/`
+### `7xAPI/json/`
 Vygenerované JSON výstupy odpovídající API datům:
 - `festival.json`
 - `venues.json`
@@ -107,11 +109,17 @@ Vygenerované JSON výstupy odpovídající API datům:
 - `events.json`
 - `events/{id}.json`
 
-### `data/transform.ps1`
-Skript pro spuštění XML → XSLT → JSON transformací. Po spuštění vygeneruje list i detail JSON soubory do `data/json/`.
+### `7xAPI/transform.ps1`
+Skript pro spuštění XML → XSLT → JSON transformací. Po spuštění vygeneruje list i detail JSON soubory do `7xAPI/json/`.
+
+### `7xAPI/json-schema/`
+JSON Schema soubory navázané na 7 hlavních REST endpointů.
+
+### `API/openapi.yaml`
+OpenAPI 3.1 specifikace navázaná na `7xAPI/json-schema/`.
 
 ### `data/README.md`
-Krátké instrukce k datové části a transformacím.
+Krátké instrukce k datové části a navázané API struktuře.
 
 ## 6) Jak projekt spustit lokálně
 Nejjednodušší je spustit lokální server ve složce `web/`:
@@ -195,7 +203,7 @@ Dalším krokem byla úprava metadat ve všech HTML souborech. Do `<head>` jsme 
 - Twitter card pro náhledy na sociálních sítích,
 - JSON‑LD (schema.org) pro festival a eventy, aby byla data strojově čitelná.
 
-Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali `festival.xml` jako hlavní datový zdroj a vytvořili `festival.xsd` pro validaci (včetně vlastních omezení typu pattern/rozsah). Přidali jsme XSLT šablony do `data/xslt/`, které převádějí XML na JSON, a vygenerovali výstupy do `data/json/`. Později jsme XML rozšířili o popis festivalu, vstupenky a odkazy, aby OpenAPI specifikace i endpoint `GET /api/festival` odpovídaly skutečným datům. Spuštění transformace zajišťuje skript `data/transform.ps1`.
+Pak jsme vytvořili datovou část ve složce `data/`. Do ní jsme zkopírovali `festival.xml` jako hlavní datový zdroj a vytvořili `festival.xsd` pro validaci (včetně vlastních omezení typu pattern/rozsah). API transformační vrstvu jsme následně oddělili do `7xAPI/`, kde jsou XSLT šablony, JSON výstupy a JSON Schema. Později jsme XML rozšířili o popis festivalu, vstupenky a odkazy, aby OpenAPI specifikace i endpoint `GET /api/festival` odpovídaly skutečným datům. Spuštění transformace zajišťuje skript `7xAPI/transform.ps1`.
 
 Další krok byl doplnění napojení na API. V HTML jsme zanechali odkaz na XML endpoint a do `program.html` jsme přidali načítání `festival.xml` pomocí `fetch`, aby se program mohl generovat z dat. Tím se zajistilo, že obsah stránky odpovídá datům v XML a změny v `festival.xml` se mohou promítnout do programu.
 
@@ -227,16 +235,16 @@ Následovala kontrola požadavků. Postupně jsme do GPT‑5.2‑Codex zadávali
 
 
 ### 2026-03-12
-- Opraveny JSON výstupy ve `data/json/` (odstranění ne‑JSON částí, zůstává pouze validní JSON).
+- Opraveny JSON výstupy ve výstupní API vrstvě (odstranění ne‑JSON částí, zůstává pouze validní JSON).
 - Aktualizováno `data/festival.xsd`: přidána unikátnost ID, referenční integrita (`key`/`keyref`), zpřesněné typy (date, time, patterny), nové typy `NonEmptyTextType` a `LocationType`.
-- Opraveny XSLT šablony v `data/xslt/` (správné uvozovky v XPath) a znovu spuštěna transformace XML → JSON.
+- Opraveny XSLT šablony v transformační vrstvě (správné uvozovky v XPath) a znovu spuštěna transformace XML → JSON.
 - Ověřena validace `data/festival.xml` proti `data/festival.xsd`.
-- Vytvořena OpenAPI 3.1 specifikace v `openapi.yaml`.
+- Vytvořena OpenAPI 3.1 specifikace v `API/openapi.yaml`.
 
 ### 2026-03-19
 - Rozšířeno `festival.xml` o `description`, `tickets` a `links`, aby datový model pokryl požadavky endpointu `GET /api/festival`.
 - Rozšířeno `data/festival.xsd` o nové typy a omezení pro popis, vstupenky a interní odkazy.
-- Upraven `data/transform.ps1`, aby generoval `festival.json` a detail JSON soubory pro `venues/{id}`, `performers/{id}` a `events/{id}`.
+- Upraven `7xAPI/transform.ps1`, aby generoval `festival.json` a detail JSON soubory pro `venues/{id}`, `performers/{id}` a `events/{id}`.
 - Doplněny nové XSLT šablony pro detail endpointy a upraven `events.json` na list response s filtry a stránkováním.
 - Přepsána OpenAPI specifikace na REST endpointy `/api/festival`, `/api/venues`, `/api/performers` a `/api/events` včetně detailů, filtrů a HTTP kódů.
 
@@ -456,7 +464,7 @@ section,article,aside{ ... border ... padding ... }
 ### Ověření: datová základna
 - `data/festival.xml` existuje.
 - `data/festival.xsd` obsahuje vlastní omezení s komentáři.
-- XSLT → JSON transformace je funkční a spustitelná (`data/transform.ps1`).
+- XSLT → JSON transformace je funkční a spustitelná (`7xAPI/transform.ps1`).
 - Výstupy JSON odpovídají API (`festival`, `venues`, `performers`, `events` + detail endpointy).
 
 Důkaz (XSD omezení + komentáře):

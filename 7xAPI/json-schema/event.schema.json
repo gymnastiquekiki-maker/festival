@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "event.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "venue_id", "performer_id", "date", "time"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^e[1-9]\\d*$" },
+    "venue_id": { "type": "string", "pattern": "^v[1-9]\\d*$" },
+    "performer_id": { "type": "string", "pattern": "^p[1-9]\\d*$" },
+    "date": { "type": "string", "format": "date" },
+    "time": { "type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$" }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "events.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items", "page", "pageSize", "totalItems", "totalPages", "filters"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": { "$ref": "event.schema.json" }
+    },
+    "page": { "type": "integer", "minimum": 1 },
+    "pageSize": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "totalItems": { "type": "integer", "minimum": 0 },
+    "totalPages": { "type": "integer", "minimum": 1 },
+    "filters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["day", "venueId", "performerId"],
+      "properties": {
+        "day": { "type": ["string", "null"], "format": "date" },
+        "venueId": { "type": ["string", "null"], "pattern": "^v[1-9]\\d*$" },
+        "performerId": { "type": ["string", "null"], "pattern": "^p[1-9]\\d*$" }
+      }
+    }
+  }
+}

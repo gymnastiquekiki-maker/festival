@@ -2,8 +2,8 @@
   [string]$Root = (Split-Path -Parent $MyInvocation.MyCommand.Path)
 )
 
-$xmlPath = Join-Path $Root "festival.xml"
-$xsltDir = Join-Path $Root "xslt"
+$xmlPath = Join-Path (Split-Path -Parent $Root) "data\festival.xml"
+$xsltDir = Join-Path $Root "transformation"
 $outDir = Join-Path $Root "json"
 
 New-Item -ItemType Directory -Path $outDir -Force | Out-Null

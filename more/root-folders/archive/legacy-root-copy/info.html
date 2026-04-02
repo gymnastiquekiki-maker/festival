@@ -180,7 +180,7 @@
 
       async function transformToJson() {
         const xmlUrl = buildUrl("data/festival.xml");
-        const xsltUrl = buildUrl("data/xslt/festival-events.xslt");
+        const xsltUrl = buildUrl("7xAPI/transformation/festival-events.xslt");
 
         const [xmlText, xsltText] = await Promise.all([
           fetchText(xmlUrl),
