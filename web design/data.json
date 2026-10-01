@@ -1,0 +1,1174 @@
+{
+  "festival": {
+    "id": "neon-forge-prague-2027",
+    "name": "Neon Forge Prague",
+    "edition": 1,
+    "location": {
+      "name": "Nákladové nádraží Žižkov",
+      "city": "Praha",
+      "country": "Česko"
+    },
+    "dateRange": {
+      "start": "2027-08-13",
+      "end": "2027-08-15"
+    },
+    "character": "Třídenní městský festival tvrdé hudby, industriální scénografie a nočních audiovizuálních vystoupení.",
+    "genres": [
+      "industrial metal",
+      "metalcore",
+      "post-metal",
+      "darkwave",
+      "synthwave",
+      "gothic metal",
+      "thrash metal",
+      "alternativní elektronika"
+    ],
+    "websiteSections": [
+      "Úvod",
+      "Program",
+      "Účinkující",
+      "Scény",
+      "Praktické informace",
+      "Vstupenky",
+      "Můj program"
+    ],
+    "ticketTypes": [
+      {
+        "id": "ticket-day",
+        "name": "Jednodenní vstupenka",
+        "priceCzk": 1490,
+        "validity": "Vstup na jeden vybraný festivalový den.",
+        "benefits": [
+          "přístup na obě scény",
+          "možnost sestavit si jednodenní program",
+          "vhodné pro návštěvníky vybírající konkrétní den podle line-upu"
+        ],
+        "salesStatus": "available"
+      },
+      {
+        "id": "ticket-full",
+        "name": "Třídenní vstupenka",
+        "priceCzk": 3490,
+        "validity": "Vstup na všechny tři festivalové dny.",
+        "benefits": [
+          "kompletní festivalový program",
+          "nejlepší poměr ceny a rozsahu programu",
+          "možnost využít osobní program pro celý festival"
+        ],
+        "salesStatus": "available"
+      },
+      {
+        "id": "ticket-vip",
+        "name": "VIP vstupenka",
+        "priceCzk": 5990,
+        "validity": "Vstup na všechny tři festivalové dny včetně VIP zóny.",
+        "benefits": [
+          "rychlejší odbavení u vstupu",
+          "vyhrazená VIP zóna s výhledem na hlavní scénu",
+          "samostatný bar a odpočinková část"
+        ],
+        "salesStatus": "limited"
+      }
+    ]
+  },
+  "venues": [
+    {
+      "id": "v1",
+      "name": "Forge Main Stage",
+      "type": "venkovní hlavní scéna",
+      "capacity": 8500,
+      "description": "Největší festivalová scéna pro headline koncerty, pyrotechniku a masivní světelný design."
+    },
+    {
+      "id": "v2",
+      "name": "Circuit Hall",
+      "type": "krytá industriální hala",
+      "capacity": 3200,
+      "description": "Temnější scéna pro klubovější koncerty, elektronické projekty a experimentálnější dramaturgii."
+    }
+  ],
+  "performers": [
+    {
+      "id": "p01",
+      "name": "Ash Circuit",
+      "country": "Česko",
+      "genres": ["industrial metal", "metalcore"],
+      "description": "Pražská kapela stavící na tvrdých riffech, strohých syntezátorech a výrazném světelném rytmu."
+    },
+    {
+      "id": "p02",
+      "name": "Voltgrave",
+      "country": "Německo",
+      "genres": ["industrial metal", "gothic metal"],
+      "description": "Německý projekt kombinující hutné kytary, mechanické beaty a chladnou pódiovou estetiku."
+    },
+    {
+      "id": "p03",
+      "name": "Black Relay",
+      "country": "Velká Británie",
+      "genres": ["post-metal", "noise rock"],
+      "description": "Britská formace s dlouhými gradujícími skladbami a syrovou klubovou energií."
+    },
+    {
+      "id": "p04",
+      "name": "Chrome Martyrs",
+      "country": "Polsko",
+      "genres": ["metalcore", "industrial metal"],
+      "description": "Metalcore s kovovým zvukem samplů a důrazem na krátké, úderné refrény."
+    },
+    {
+      "id": "p05",
+      "name": "Neon Warden",
+      "country": "Švédsko",
+      "genres": ["synthwave", "darkwave"],
+      "description": "Severský noční projekt propojující retro syntezátory a ponurou festivalovou atmosféru."
+    },
+    {
+      "id": "p06",
+      "name": "Iron Lumen",
+      "country": "Česko",
+      "genres": ["gothic metal", "darkwave"],
+      "description": "Domácí kapela s melodickým vokálem, temnými klávesami a pomalými dramatickými pasážemi."
+    },
+    {
+      "id": "p07",
+      "name": "Signal Howl",
+      "country": "Rakousko",
+      "genres": ["alternative metal", "industrial rock"],
+      "description": "Rakouský kvartet pracující s ostrým kytarovým zvukem a naléhavou rytmikou."
+    },
+    {
+      "id": "p08",
+      "name": "Rust Meridian",
+      "country": "Slovensko",
+      "genres": ["post-metal", "sludge metal"],
+      "description": "Těžký a pomalý zvuk inspirovaný industriální krajinou a dlouhými instrumentálními plochami."
+    },
+    {
+      "id": "p09",
+      "name": "Machine Saints",
+      "country": "Francie",
+      "genres": ["industrial metal", "electro metal"],
+      "description": "Francouzský live projekt s taneční elektronikou, ostrými kytarami a výrazným vizuálem."
+    },
+    {
+      "id": "p10",
+      "name": "Furnace Choir",
+      "country": "Itálie",
+      "genres": ["gothic metal", "symphonic metal"],
+      "description": "Dramatická italská skupina kombinující mohutné sbory, kytary a filmovou atmosféru."
+    },
+    {
+      "id": "p11",
+      "name": "Obsidian Shift",
+      "country": "Nizozemsko",
+      "genres": ["progressive metal", "post-metal"],
+      "description": "Precizní progresivní metal s nepravidelnými rytmy a dlouhými instrumentálními přechody."
+    },
+    {
+      "id": "p12",
+      "name": "Byte Ritual",
+      "country": "Česko",
+      "genres": ["dark electronic", "industrial"],
+      "description": "Audiovizuální projekt pro noční část programu, založený na tvrdých beatech a projekcích."
+    },
+    {
+      "id": "p13",
+      "name": "Grain of Static",
+      "country": "Dánsko",
+      "genres": ["noise rock", "post-hardcore"],
+      "description": "Severská kapela s nervní energií, špinavým zvukem a minimalistickou pódiovou prezentací."
+    },
+    {
+      "id": "p14",
+      "name": "Red Reactor",
+      "country": "Maďarsko",
+      "genres": ["thrash metal", "industrial metal"],
+      "description": "Rychlý thrash s mechanickými samply a výraznou rytmickou přesností."
+    },
+    {
+      "id": "p15",
+      "name": "Cinder Protocol",
+      "country": "Německo",
+      "genres": ["metalcore", "electronicore"],
+      "description": "Energický projekt stavící na breakdown pasážích, elektronických mezihrách a refrénech pro velké pódium."
+    },
+    {
+      "id": "p16",
+      "name": "Lunar Anvil",
+      "country": "Finsko",
+      "genres": ["doom metal", "post-metal"],
+      "description": "Pomalá a hutná kapela s důrazem na atmosféru, světelný kontrast a výrazné basové linky."
+    },
+    {
+      "id": "p17",
+      "name": "Glass Guillotine",
+      "country": "Francie",
+      "genres": ["gothic metal", "alternative metal"],
+      "description": "Melodická skupina s ostrým vizuálním stylem a refrény na pomezí gotiky a alternativního metalu."
+    },
+    {
+      "id": "p18",
+      "name": "Nocturne Grid",
+      "country": "Česko",
+      "genres": ["synthwave", "darkwave"],
+      "description": "Noční elektronické duo s výraznými arpeggii, temnými basy a filmovou náladou."
+    },
+    {
+      "id": "p19",
+      "name": "Sable Engine",
+      "country": "Belgie",
+      "genres": ["industrial rock", "post-punk"],
+      "description": "Belgický projekt propojující taneční motoriku, hlukové kytary a chladný vokál."
+    },
+    {
+      "id": "p20",
+      "name": "Neural Pyre",
+      "country": "Španělsko",
+      "genres": ["melodic death metal", "industrial metal"],
+      "description": "Rychlá kapela s melodickými linkami, ostrým vokálem a futuristickými samply."
+    },
+    {
+      "id": "p21",
+      "name": "Kerosene Halo",
+      "country": "Irsko",
+      "genres": ["alternative metal", "post-grunge"],
+      "description": "Kytarová kapela s výrazným frontmanem, zpěvnými refrény a temnější náladou."
+    },
+    {
+      "id": "p22",
+      "name": "Data Shrine",
+      "country": "Česko",
+      "genres": ["dark electronic", "ambient industrial"],
+      "description": "Lokální projekt určený pro audiovizuální stage, pracující s dronem, beatem a fragmentovaným hlasem."
+    },
+    {
+      "id": "p23",
+      "name": "Magnetar Crown",
+      "country": "Norsko",
+      "genres": ["blackened metal", "post-metal"],
+      "description": "Severská kapela s ostrým zvukem, vrstvenými tremoly a monumentální atmosférou."
+    },
+    {
+      "id": "p24",
+      "name": "Welded Hearts",
+      "country": "Slovinsko",
+      "genres": ["gothic rock", "darkwave"],
+      "description": "Temnější melodický projekt propojující kytary, taneční tempo a romantický vokál."
+    },
+    {
+      "id": "p25",
+      "name": "Prism Collapse",
+      "country": "Česko",
+      "genres": ["progressive metal", "metalcore"],
+      "description": "Technicky přesná domácí skupina s kontrastem čistých pasáží a těžkých zlomů."
+    },
+    {
+      "id": "p26",
+      "name": "Torque Cathedral",
+      "country": "Rakousko",
+      "genres": ["doom metal", "industrial"],
+      "description": "Pomalé riffy, hluboké samply a pódiová prezentace inspirovaná opuštěnou továrnou."
+    },
+    {
+      "id": "p27",
+      "name": "Echoes of Alloy",
+      "country": "Německo",
+      "genres": ["industrial metal", "alternative metal"],
+      "description": "Kapela s výraznou rytmikou, kytarovými smyčkami a refrény stavěnými pro festivalové publikum."
+    },
+    {
+      "id": "p28",
+      "name": "Night Assembly",
+      "country": "Velká Británie",
+      "genres": ["darkwave", "gothic rock"],
+      "description": "Britská sestava s elegantním temným zvukem, syntezátory a výraznou basovou linkou."
+    },
+    {
+      "id": "p29",
+      "name": "Plasma Verdict",
+      "country": "Polsko",
+      "genres": ["thrash metal", "metalcore"],
+      "description": "Úderný crossover thrash s moderní produkcí a nekompromisním koncertním tempem."
+    },
+    {
+      "id": "p30",
+      "name": "Hollow Voltage",
+      "country": "Česko",
+      "genres": ["electronicore", "industrial metal"],
+      "description": "Domácí projekt propojující tvrdé kytary, breakbeatové prvky a výrazné digitální efekty."
+    },
+    {
+      "id": "p31",
+      "name": "Arc Furnace",
+      "country": "Švédsko",
+      "genres": ["melodic death metal", "industrial metal"],
+      "description": "Severský melodický death metal s přesnou rytmikou a světelnou show inspirovanou vysokou pecí."
+    },
+    {
+      "id": "p32",
+      "name": "Static Pilgrims",
+      "country": "Portugalsko",
+      "genres": ["post-metal", "ambient rock"],
+      "description": "Atmosférická skupina s dlouhými nástupy, pomalou gradací a důrazem na prostor."
+    },
+    {
+      "id": "p33",
+      "name": "Wirebound",
+      "country": "Česko",
+      "genres": ["industrial rock", "alternative metal"],
+      "description": "Pražská kytarová kapela s ostrým elektronickým spodkem a přímočarými skladbami."
+    },
+    {
+      "id": "p34",
+      "name": "Carbon Liturgy",
+      "country": "Itálie",
+      "genres": ["gothic metal", "doom metal"],
+      "description": "Temný italský projekt s chrámovou atmosférou, hutnými kytarami a hlubokým vokálem."
+    },
+    {
+      "id": "p35",
+      "name": "Mothership Ruins",
+      "country": "Francie",
+      "genres": ["sludge metal", "post-metal"],
+      "description": "Špinavý a těžký zvuk s vesmírnou estetikou a dlouhými hypnotickými pasážemi."
+    },
+    {
+      "id": "p36",
+      "name": "Velvet Overdrive",
+      "country": "Česko",
+      "genres": ["alternative rock", "darkwave"],
+      "description": "Melodičtější domácí projekt vhodný pro odpolední část festivalu a širší publikum."
+    },
+    {
+      "id": "p37",
+      "name": "Binary Wound",
+      "country": "Nizozemsko",
+      "genres": ["electronicore", "metalcore"],
+      "description": "Tvrdá kapela s ostrými elektronickými dropy, přesnou rytmikou a agresivním pódiovým projevem."
+    },
+    {
+      "id": "p38",
+      "name": "Solar Rust",
+      "country": "Španělsko",
+      "genres": ["stoner metal", "post-metal"],
+      "description": "Teplejší kytarový zvuk, delší riffové plochy a kontrast k chladnější industriální části festivalu."
+    },
+    {
+      "id": "p39",
+      "name": "Velorium",
+      "country": "Česko",
+      "genres": ["symphonic metal", "gothic metal"],
+      "description": "Domácí symfonický projekt s ženským vokálem, klávesovými aranžemi a výrazným melodickým tahem."
+    },
+    {
+      "id": "p40",
+      "name": "Rivet Prayer",
+      "country": "Belgie",
+      "genres": ["industrial metal", "noise"],
+      "description": "Experimentálnější projekt pracující s kovovým hlukem, rytmickými smyčkami a těžkými riffy."
+    },
+    {
+      "id": "p41",
+      "name": "Darkline Atlas",
+      "country": "Německo",
+      "genres": ["progressive metal", "alternative metal"],
+      "description": "Technicky vyspělá kapela kombinující melodické refrény, členité skladby a přesné bicí."
+    },
+    {
+      "id": "p42",
+      "name": "Sparks Beneath",
+      "country": "Česko",
+      "genres": ["post-hardcore", "metalcore"],
+      "description": "Energická domácí sestava s emocemi, ostrými kytarami a krátkými výbušnými skladbami."
+    },
+    {
+      "id": "p43",
+      "name": "Anode Empire",
+      "country": "Finsko",
+      "genres": ["industrial metal", "electro metal"],
+      "description": "Finská kapela s mrazivou atmosférou, tanečním pulsem a těžkým kytarovým zvukem."
+    },
+    {
+      "id": "p44",
+      "name": "Ghosts of Transit",
+      "country": "Česko",
+      "genres": ["darkwave", "post-punk"],
+      "description": "Noční projekt inspirovaný městskou dopravou, ozvěnami stanic a temnou taneční energií."
+    },
+    {
+      "id": "p45",
+      "name": "Molten Frame",
+      "country": "Rakousko",
+      "genres": ["thrash metal", "industrial metal"],
+      "description": "Rychlá a přesná kapela s tvrdým kytarovým zvukem a industriálním zvukovým designem."
+    },
+    {
+      "id": "p46",
+      "name": "The Pale Mechanism",
+      "country": "Velká Británie",
+      "genres": ["gothic metal", "industrial rock"],
+      "description": "Temně melodická sestava s výrazným vokálem, dramatickou pódiovou stylizací a pomalými refrény."
+    },
+    {
+      "id": "p47",
+      "name": "Cathode Bloom",
+      "country": "Slovensko",
+      "genres": ["synthwave", "dark electronic"],
+      "description": "Elektronické duo s tanečním tempem, melancholickými motivy a barevnou světelnou show."
+    },
+    {
+      "id": "p48",
+      "name": "Ruin Operator",
+      "country": "Polsko",
+      "genres": ["metalcore", "industrial metal"],
+      "description": "Moderní metalcore s těžkými breakdowny, strohými samply a ostrými refrény."
+    },
+    {
+      "id": "p49",
+      "name": "Ether Hammer",
+      "country": "Dánsko",
+      "genres": ["post-metal", "sludge metal"],
+      "description": "Dánská skupina stavící na hutné atmosféře, pomalých nástupech a masivním zvuku."
+    },
+    {
+      "id": "p50",
+      "name": "Infra Sirens",
+      "country": "Česko",
+      "genres": ["darkwave", "industrial pop"],
+      "description": "Domácí temně elektronický projekt s výraznými melodiemi a festivalově přístupným zvukem."
+    },
+    {
+      "id": "p51",
+      "name": "Forgefall",
+      "country": "Norsko",
+      "genres": ["blackened metal", "industrial metal"],
+      "description": "Norský projekt propojující chladný blackened metal s mechanickou rytmikou a monumentálním zvukem."
+    },
+    {
+      "id": "p52",
+      "name": "Neon Threnody",
+      "country": "Francie",
+      "genres": ["gothic metal", "darkwave"],
+      "description": "Melancholická kapela s výraznou elektronikou, temnou poetikou a zpěvným vokálem."
+    },
+    {
+      "id": "p53",
+      "name": "Crimson Algorithm",
+      "country": "Česko",
+      "genres": ["progressive metal", "electronicore"],
+      "description": "Technický domácí projekt s proměnlivou rytmikou, digitální estetikou a kontrastními vokály."
+    },
+    {
+      "id": "p54",
+      "name": "Steel Mirage",
+      "country": "Itálie",
+      "genres": ["symphonic metal", "industrial metal"],
+      "description": "Italská skupina s velkým zvukem, orchestrálními prvky a výrazným finálovým potenciálem."
+    },
+    {
+      "id": "p55",
+      "name": "Overpass Funeral",
+      "country": "Česko",
+      "genres": ["doom metal", "post-metal"],
+      "description": "Pomalý domácí projekt inspirovaný městskými stavbami, ozvěnou betonu a noční Prahou."
+    },
+    {
+      "id": "p56",
+      "name": "Metro Seraphs",
+      "country": "Německo",
+      "genres": ["darkwave", "industrial rock"],
+      "description": "Tanečnější skupina s gotickou atmosférou, klávesami a tvrdší kytarovou oporou."
+    },
+    {
+      "id": "p57",
+      "name": "Last Foundry",
+      "country": "Česko",
+      "genres": ["thrash metal", "metalcore"],
+      "description": "Domácí kapela s rychlým tempem, agresivním vokálem a energií pro odpolední moshpit."
+    },
+    {
+      "id": "p58",
+      "name": "Orbital Saints",
+      "country": "Švédsko",
+      "genres": ["melodic metal", "synthwave"],
+      "description": "Melodická sestava propojující severský metal s retro syntezátory a velkými refrény."
+    },
+    {
+      "id": "p59",
+      "name": "Terminal Choir",
+      "country": "Velká Británie",
+      "genres": ["industrial metal", "gothic metal"],
+      "description": "Temný britský projekt s mohutnými sbory, těžkými riffy a dramatickým závěrem koncertu."
+    },
+    {
+      "id": "p60",
+      "name": "Neon Forge Collective",
+      "country": "Česko",
+      "genres": ["industrial", "audiovisual performance"],
+      "description": "Speciální domácí kolektiv připravující závěrečné audiovizuální vystoupení pro celý festival."
+    }
+  ],
+  "program": [
+    {
+      "id": "e001",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v1",
+      "performerId": "p01",
+      "title": "Opening Sparks",
+      "type": "concert"
+    },
+    {
+      "id": "e002",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v2",
+      "performerId": "p02",
+      "title": "Voltage Mass",
+      "type": "concert"
+    },
+    {
+      "id": "e003",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v1",
+      "performerId": "p03",
+      "title": "Relay Session",
+      "type": "concert"
+    },
+    {
+      "id": "e004",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v2",
+      "performerId": "p04",
+      "title": "Chrome Impact",
+      "type": "concert"
+    },
+    {
+      "id": "e005",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v1",
+      "performerId": "p05",
+      "title": "Neon Watch",
+      "type": "concert"
+    },
+    {
+      "id": "e006",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v2",
+      "performerId": "p06",
+      "title": "Lumen Rite",
+      "type": "concert"
+    },
+    {
+      "id": "e007",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v1",
+      "performerId": "p07",
+      "title": "Howl Transmission",
+      "type": "concert"
+    },
+    {
+      "id": "e008",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v2",
+      "performerId": "p08",
+      "title": "Rust Meridian Live",
+      "type": "concert"
+    },
+    {
+      "id": "e009",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v1",
+      "performerId": "p09",
+      "title": "Machine Procession",
+      "type": "concert"
+    },
+    {
+      "id": "e010",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v2",
+      "performerId": "p10",
+      "title": "Choir of Sparks",
+      "type": "concert"
+    },
+    {
+      "id": "e011",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v1",
+      "performerId": "p11",
+      "title": "Obsidian Motion",
+      "type": "concert"
+    },
+    {
+      "id": "e012",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v2",
+      "performerId": "p12",
+      "title": "Byte Ritual AV",
+      "type": "audiovisual performance"
+    },
+    {
+      "id": "e013",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v1",
+      "performerId": "p13",
+      "title": "Static Burn",
+      "type": "concert"
+    },
+    {
+      "id": "e014",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v2",
+      "performerId": "p14",
+      "title": "Reactor Strike",
+      "type": "concert"
+    },
+    {
+      "id": "e015",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v1",
+      "performerId": "p15",
+      "title": "Cinder Protocol",
+      "type": "concert"
+    },
+    {
+      "id": "e016",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v2",
+      "performerId": "p16",
+      "title": "Lunar Anvil",
+      "type": "concert"
+    },
+    {
+      "id": "e017",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v1",
+      "performerId": "p17",
+      "title": "Glass Guillotine",
+      "type": "concert"
+    },
+    {
+      "id": "e018",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v2",
+      "performerId": "p18",
+      "title": "Nocturne Grid",
+      "type": "audiovisual performance"
+    },
+    {
+      "id": "e019",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v1",
+      "performerId": "p19",
+      "title": "Sable Engine",
+      "type": "concert"
+    },
+    {
+      "id": "e020",
+      "date": "2027-08-13",
+      "day": 1,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v2",
+      "performerId": "p20",
+      "title": "Neural Pyre",
+      "type": "concert"
+    },
+    {
+      "id": "e021",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v1",
+      "performerId": "p21",
+      "title": "Kerosene Halo",
+      "type": "concert"
+    },
+    {
+      "id": "e022",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v2",
+      "performerId": "p22",
+      "title": "Data Shrine",
+      "type": "audiovisual performance"
+    },
+    {
+      "id": "e023",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v1",
+      "performerId": "p23",
+      "title": "Magnetar Crown",
+      "type": "concert"
+    },
+    {
+      "id": "e024",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v2",
+      "performerId": "p24",
+      "title": "Welded Hearts",
+      "type": "concert"
+    },
+    {
+      "id": "e025",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v1",
+      "performerId": "p25",
+      "title": "Prism Collapse",
+      "type": "concert"
+    },
+    {
+      "id": "e026",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v2",
+      "performerId": "p26",
+      "title": "Torque Cathedral",
+      "type": "concert"
+    },
+    {
+      "id": "e027",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v1",
+      "performerId": "p27",
+      "title": "Echoes of Alloy",
+      "type": "concert"
+    },
+    {
+      "id": "e028",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v2",
+      "performerId": "p28",
+      "title": "Night Assembly",
+      "type": "concert"
+    },
+    {
+      "id": "e029",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v1",
+      "performerId": "p29",
+      "title": "Plasma Verdict",
+      "type": "concert"
+    },
+    {
+      "id": "e030",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v2",
+      "performerId": "p30",
+      "title": "Hollow Voltage",
+      "type": "concert"
+    },
+    {
+      "id": "e031",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v1",
+      "performerId": "p31",
+      "title": "Arc Furnace",
+      "type": "concert"
+    },
+    {
+      "id": "e032",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v2",
+      "performerId": "p32",
+      "title": "Static Pilgrims",
+      "type": "concert"
+    },
+    {
+      "id": "e033",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v1",
+      "performerId": "p33",
+      "title": "Wirebound",
+      "type": "concert"
+    },
+    {
+      "id": "e034",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v2",
+      "performerId": "p34",
+      "title": "Carbon Liturgy",
+      "type": "concert"
+    },
+    {
+      "id": "e035",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v1",
+      "performerId": "p35",
+      "title": "Mothership Ruins",
+      "type": "concert"
+    },
+    {
+      "id": "e036",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v2",
+      "performerId": "p36",
+      "title": "Velvet Overdrive",
+      "type": "concert"
+    },
+    {
+      "id": "e037",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v1",
+      "performerId": "p37",
+      "title": "Binary Wound",
+      "type": "concert"
+    },
+    {
+      "id": "e038",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v2",
+      "performerId": "p38",
+      "title": "Solar Rust",
+      "type": "concert"
+    },
+    {
+      "id": "e039",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v1",
+      "performerId": "p39",
+      "title": "Velorium",
+      "type": "concert"
+    },
+    {
+      "id": "e040",
+      "date": "2027-08-14",
+      "day": 2,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v2",
+      "performerId": "p40",
+      "title": "Rivet Prayer",
+      "type": "concert"
+    },
+    {
+      "id": "e041",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v1",
+      "performerId": "p41",
+      "title": "Darkline Atlas",
+      "type": "concert"
+    },
+    {
+      "id": "e042",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "14:00",
+      "endTime": "14:40",
+      "venueId": "v2",
+      "performerId": "p42",
+      "title": "Sparks Beneath",
+      "type": "concert"
+    },
+    {
+      "id": "e043",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v1",
+      "performerId": "p43",
+      "title": "Anode Empire",
+      "type": "concert"
+    },
+    {
+      "id": "e044",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "15:00",
+      "endTime": "15:40",
+      "venueId": "v2",
+      "performerId": "p44",
+      "title": "Ghosts of Transit",
+      "type": "concert"
+    },
+    {
+      "id": "e045",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v1",
+      "performerId": "p45",
+      "title": "Molten Frame",
+      "type": "concert"
+    },
+    {
+      "id": "e046",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "venueId": "v2",
+      "performerId": "p46",
+      "title": "The Pale Mechanism",
+      "type": "concert"
+    },
+    {
+      "id": "e047",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v1",
+      "performerId": "p47",
+      "title": "Cathode Bloom",
+      "type": "concert"
+    },
+    {
+      "id": "e048",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "17:00",
+      "endTime": "17:45",
+      "venueId": "v2",
+      "performerId": "p48",
+      "title": "Ruin Operator",
+      "type": "concert"
+    },
+    {
+      "id": "e049",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v1",
+      "performerId": "p49",
+      "title": "Ether Hammer",
+      "type": "concert"
+    },
+    {
+      "id": "e050",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "18:10",
+      "endTime": "18:55",
+      "venueId": "v2",
+      "performerId": "p50",
+      "title": "Infra Sirens",
+      "type": "concert"
+    },
+    {
+      "id": "e051",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v1",
+      "performerId": "p51",
+      "title": "Forgefall",
+      "type": "concert"
+    },
+    {
+      "id": "e052",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "19:20",
+      "endTime": "20:10",
+      "venueId": "v2",
+      "performerId": "p52",
+      "title": "Neon Threnody",
+      "type": "concert"
+    },
+    {
+      "id": "e053",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v1",
+      "performerId": "p53",
+      "title": "Crimson Algorithm",
+      "type": "concert"
+    },
+    {
+      "id": "e054",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "20:40",
+      "endTime": "21:30",
+      "venueId": "v2",
+      "performerId": "p54",
+      "title": "Steel Mirage",
+      "type": "concert"
+    },
+    {
+      "id": "e055",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v1",
+      "performerId": "p55",
+      "title": "Overpass Funeral",
+      "type": "concert"
+    },
+    {
+      "id": "e056",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "venueId": "v2",
+      "performerId": "p56",
+      "title": "Metro Seraphs",
+      "type": "concert"
+    },
+    {
+      "id": "e057",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v1",
+      "performerId": "p57",
+      "title": "Last Foundry",
+      "type": "concert"
+    },
+    {
+      "id": "e058",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "23:30",
+      "endTime": "00:30",
+      "venueId": "v2",
+      "performerId": "p58",
+      "title": "Orbital Saints",
+      "type": "concert"
+    },
+    {
+      "id": "e059",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v1",
+      "performerId": "p59",
+      "title": "Terminal Choir",
+      "type": "concert"
+    },
+    {
+      "id": "e060",
+      "date": "2027-08-15",
+      "day": 3,
+      "startTime": "01:00",
+      "endTime": "01:50",
+      "venueId": "v2",
+      "performerId": "p60",
+      "title": "Neon Forge Closing Ritual",
+      "type": "audiovisual performance"
+    }
+  ]
+}
